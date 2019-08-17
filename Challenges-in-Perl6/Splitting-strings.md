@@ -71,7 +71,7 @@ When using the default input parameter (`"ABBBCDEEF"`), this prints the followin
 
 [Francis Whittle](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/fjwhittle/perl6/ch-1.p6), [Martin Barth](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/martin-barth/perl6/ch-1.p6), [Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/randy-lauen/perl6/ch-1.p6), [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/joelle-maslak/perl6/ch-1.p6),and [Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/feng-chang/perl6/ch-1.p6) used regex patterns almost identical to mine above, but used that pattern as a parameter to the `comb` built-in function. 
 
-[Kevin Colyer}(https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/kevin-colyer/perl6/ch-1.p6), [noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/noud/perl6/ch-1.p6), and [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/athanasius/perl6/ch-1.p6) used the same regex pattern as I did along with a similar syntax to retrieve the bits and pieces.
+[Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/kevin-colyer/perl6/ch-1.p6), [noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/noud/perl6/ch-1.p6), and [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/athanasius/perl6/ch-1.p6) used the same regex pattern as I did along with a similar syntax to retrieve the bits and pieces.
 
 [Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/ozzy/perl6/ch-1.p6) also used a regex, but with named captures rather than using the `$0` special variable (which is really a shortcut for `$/[0]`):
 
@@ -92,8 +92,8 @@ sub splitchange ($in) {
 
 See also the following blog posts:
 
-* Arne Sommer: [https://perl6.eu/amicable-split.html]
-* Adam Russell: [https://adamcrussell.livejournal.com/6526.html]
+* Arne Sommer: https://perl6.eu/amicable-split.html
+* Adam Russell: https://adamcrussell.livejournal.com/6526.html
 * Roger Bell West: https://blog.firedrake.org/archive/2019/08/Perl_Weekly_Challenge_19.html
 * Jaldhar Y. Vyas: https://www.braincells.com/perl/2019/08/perl_weekly_challenge_week_20.html
 
