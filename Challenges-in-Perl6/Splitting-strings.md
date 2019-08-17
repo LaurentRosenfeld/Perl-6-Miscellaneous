@@ -1,6 +1,6 @@
 # Split Strings on Character Change
 
-This is derived from my [blog post](http://blogs.perl.org/users/laurent_r/2019/08/perl-weekly-challenge-20-split-string-on-character-change-and-amicable-numbers.html) made in answer to the [Week 20 of the Perl Weekly Challenge](https://perlweeklychallenge.org/blog/perl-weekly-challenge-020/ organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a> as well as answers made by others to the same challenge.
+This is derived from my [blog post](http://blogs.perl.org/users/laurent_r/2019/08/perl-weekly-challenge-20-split-string-on-character-change-and-amicable-numbers.html) made in answer to the [Week 20 of the Perl Weekly Challenge](https://perlweeklychallenge.org/blog/perl-weekly-challenge-020/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a> as well as answers made by others to the same challenge.
 
 The challenge reads as follows:
 
