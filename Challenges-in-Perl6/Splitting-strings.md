@@ -88,7 +88,7 @@ sub splitchange ($in) {
 }
 ```
 
-Although Damian Conway doesn't participate directly to the Perl Weekly Challenge, but usually comments on it afterwards, his beautifully crafted solutions are always worth contemplating. His [latest blog](http://blogs.perl.org/users/damian_conway/2019/08/with-friends-like-these.html) suggests a regex as a parameter to the `comb` bultin subroutine:
+Although Damian Conway doesn't participate directly to the Perl Weekly Challenge, but usually comments on it afterwards, his beautifully crafted solutions are always worth contemplating. His [latest blog](http://blogs.perl.org/users/damian_conway/2019/08/with-friends-like-these.html) suggests a regex as a parameter to the `comb` builtin subroutine:
 
 ``` perl6
 use v6.d;
