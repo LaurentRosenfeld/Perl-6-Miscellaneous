@@ -6,7 +6,7 @@ The challenge reads as follows:
 
 *Write a script to accept a string from command line and split it on change of character. For example, if the string is "ABBCDEEF", then it should split like "A", "BB", "C", "D", "EE", "F".*
 
-##My Solutions
+## My Solutions
 
 For this, it seemed fairly obvious to me that a simple regex in a one-liner should do the trick.
 
@@ -59,7 +59,7 @@ When using the default input parameter (`"ABBBCDEEF"`), this prints the followin
     $ perl6 split-string.p6
     A, BBB, C, D, EE, F
 
-##Alternative Solutions
+## Alternative Solutions
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/arne-sommer/perl6/ch-1.p6) devised a solution somewhat similar to the procedural approach I outlined just above: splitting the input string into an array of individual letters and then loop over each letter to check whether it is the same as the previous one . [Adam Russell](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/adam-russell/perl6/ch-1.p6), who was apparently offering solutions in Perl 6 for the first time, also used a procedural approach, but he used a `repeat ... while` loop and he printed the letters on the fly within the loop. 
 
@@ -69,7 +69,7 @@ When using the default input parameter (`"ABBBCDEEF"`), this prints the followin
 
     perl6 -e ' @*ARGS.shift.subst(/ ( (.)$0* ) /, { "\"$0\"" }, :g).subst("\"\"", "\", \"", :g).say; ' "ABBCDEEF"
 
-[Francis Whittle](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/fjwhittle/perl6/ch-1.p6), [Martin Barth](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/martin-barth/perl6/ch-1.p6), [Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/randy-lauen/perl6/ch-1.p6), [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/joelle-maslak/perl6/ch-1.p6),and {Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/feng-chang/perl6/ch-1.p6) used regex patterns almost identical to mine above, but used that pattern as a parameter to the `comb` built-in function. 
+[Francis Whittle](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/fjwhittle/perl6/ch-1.p6), [Martin Barth](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/martin-barth/perl6/ch-1.p6), [Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/randy-lauen/perl6/ch-1.p6), [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/joelle-maslak/perl6/ch-1.p6),and [Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/feng-chang/perl6/ch-1.p6) used regex patterns almost identical to mine above, but used that pattern as a parameter to the `comb` built-in function. 
 
 [Kevin Colyer}(https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/kevin-colyer/perl6/ch-1.p6), [noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/noud/perl6/ch-1.p6), and [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/athanasius/perl6/ch-1.p6) used the same regex pattern as I did along with a similar syntax to retrieve the bits and pieces.
 
@@ -88,7 +88,7 @@ sub splitchange ($in) {
 }
 ```
 
-##See Also
+## See Also
 
 See also the following blog posts:
 
@@ -97,7 +97,9 @@ See also the following blog posts:
 * Roger Bell West: https://blog.firedrake.org/archive/2019/08/Perl_Weekly_Challenge_19.html
 * Jaldhar Y. Vyas: https://www.braincells.com/perl/2019/08/perl_weekly_challenge_week_20.html
 
-##Wrapping up
+## Wrapping up
 
 Please let me know if I forgot any of the challengers or if you think my explanation of your code misses something important.
+
+If you want to participate to the Perl Weekly Challenge, please connect to [this site](https://perlweeklychallenge.org/).
 
