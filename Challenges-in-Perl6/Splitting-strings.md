@@ -88,6 +88,16 @@ sub splitchange ($in) {
 }
 ```
 
+Although Damian Conway doesn't participate directly to the Perl Weekly Challenge, but usually comments on it afterwards, his beautifully crafted solutions are always worth contemplating. His [latest blog](http://blogs.perl.org/users/damian_conway/2019/08/with-friends-like-these.html) suggests a regex as a parameter to the `comb` bultin subroutine:
+
+``` perl6
+use v6.d;
+
+sub MAIN (\str) {
+    .say for str.comb: /(.) $0*/
+}
+```
+
 ## See Also
 
 See also the following blog posts:
@@ -96,6 +106,7 @@ See also the following blog posts:
 * Adam Russell: https://adamcrussell.livejournal.com/6526.html
 * Roger Bell West: https://blog.firedrake.org/archive/2019/08/Perl_Weekly_Challenge_19.html
 * Jaldhar Y. Vyas: https://www.braincells.com/perl/2019/08/perl_weekly_challenge_week_20.html
+* Damian Conway: http://blogs.perl.org/users/damian_conway/2019/08/with-friends-like-these.html
 
 ## Wrapping up
 
