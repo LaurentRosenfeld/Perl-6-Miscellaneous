@@ -29,7 +29,9 @@ for 2..Inf -> $i {
 }
 ```
 
-The `sum-divisors` subroutine is not optimal and its performance could be greatly enhanced, but we don't need to do that since we're looking only for the first pair of amicable numbers, which are rather small. This program prints almost instantly the first pair of amicable numbers:
+The `sum-divisors` subroutine is not optimal and its performance could be greatly enhanced, but we don't need to do that since we're looking only for the first pair of amicable numbers, which are rather small. Also, I did not have much time on that week because I was quite busy with the Perl Conference in Riga. 
+
+This program prints almost instantly the first pair of amicable numbers:
 
     $ perl6 amicable_nrs.p6
     220 and 284 are amicable numbers

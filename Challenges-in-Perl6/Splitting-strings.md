@@ -78,7 +78,7 @@ sub MAIN(Str:D $input) {
 }
 ```
 
-[Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/kevin-colyer/perl6/ch-1.p6), [noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/noud/perl6/ch-1.p6), and [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/athanasius/perl6/ch-1.p6) used the same regex pattern as I did along with a similar syntax to retrieve the bits and pieces.
+[Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/kevin-colyer/perl6/ch-1.p6), [Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/noud/perl6/ch-1.p6), and [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/athanasius/perl6/ch-1.p6) used the same regex pattern as I did along with a similar syntax to retrieve the bits and pieces.
 
 [Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/ozzy/perl6/ch-1.p6) also used a regex, but with named captures rather than using the `$0` special variable (which is really a shortcut for `$/[0]`):
 
