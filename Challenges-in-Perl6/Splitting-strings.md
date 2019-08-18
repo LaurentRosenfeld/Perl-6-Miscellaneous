@@ -69,7 +69,7 @@ When using the default input parameter (`"ABBBCDEEF"`), this prints the followin
 
     perl6 -e ' @*ARGS.shift.subst(/ ( (.)$0* ) /, { "\"$0\"" }, :g).subst("\"\"", "\", \"", :g).say; ' "ABBCDEEF"
 
-[Francis Whittle](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/fjwhittle/perl6/ch-1.p6), [Martin Barth](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/martin-barth/perl6/ch-1.p6), [Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/randy-lauen/perl6/ch-1.p6), [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/joelle-maslak/perl6/ch-1.p6),and [Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/feng-chang/perl6/ch-1.p6) used regex patterns almost identical to mine above, but used that pattern as a parameter to the `comb` built-in function. As an example, this is Joelle's solution:
+[Francis Whittle](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/fjwhittle/perl6/ch-1.p6), [Martin Barth](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/martin-barth/perl6/ch-1.p6), [Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/randy-lauen/perl6/ch-1.p6), [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/joelle-maslak/perl6/ch-1.p6), and [Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-020/feng-chang/perl6/ch-1.p6) used regex patterns almost identical to mine above, but used that pattern as a parameter to the `comb` built-in function. As an example, this is Joelle's solution:
 
 ``` perl6
 sub MAIN(Str:D $input) {
