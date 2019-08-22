@@ -9,6 +9,7 @@ At this point, the following posts are available:
 * [Splitting Strings on Character Change](./Splitting-strings.md) (PWC # 20);
 * [Amicable Numbers](./Amicable-numbers.md) ((PWC # 20));
 * [Months with Five Weekends](./Five-weekends-in-a-month.md) (PWC # 19).
+* [Wrapping Lines](wrapping-lines.md) (PWC # 19)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
