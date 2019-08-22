@@ -57,7 +57,7 @@ Let's try to run this program with increasing input numbers:
 
 It works, but the formula converges very slowly: with an input number of 10,000, we obtain only 4 correct digits. 
 
-Let's try with a better formula. Isaac Newton found in 1669 that what is known as Euler's constant is equal to the  sum of the following infinite series (sometimes called the Maclauring series expansion):
+Let's try with a better formula. Isaac Newton found in 1669 that what is known as Euler's constant is equal to the  sum of the following infinite series (sometimes called the Maclaurin series expansion):
 
 ![alt text](./Euler2.jpg "Sum of infinite series for e")
 
@@ -164,7 +164,7 @@ There is more than on way to do it. In some cases in the past, many solutions to
 [Adam Russell](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/adam-russell/perl6/ch-1.p6) played with channels presumably to test concurrent or distributed computing in order to boost performance. Looking at his solution, it seemed to me that Adam was using the same sum of infinite series as the previous challengers just above, but I must admit that I originally didn't really understand his method. It became clear to me only afterward when I read his [Implementing a spigot algorithm for the digits of e](https://adamcrussell.livejournal.com/6924.html) blog post, so you might probably want to do the same.
 
 
-[Kevin Coyler](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/kevin-colyer/perl6/ch-1.p6) apparently has quite a bit of fun with that and suggested not less than 5 different ways of computing *e*: the two formulas I gave at the beginning of this post, two continued fractions and even a probabilistic or stochastic computation. I had probably the same  amount of fun reading and trying his solutions as he did writing them, and I think you should really follow the link and read his solutions to enjoy the same fun. This one of his subroutines, for the fun:
+[Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/kevin-colyer/perl6/ch-1.p6) apparently has quite a bit of fun with that and suggested not less than 5 different ways of computing *e*: the two formulas I gave at the beginning of this post, two continued fractions and even a probabilistic or stochastic computation. I had probably the same  amount of fun reading and trying his solutions as he did writing them, and I think you should really follow the link and read his solutions to enjoy the same fun. This one of his subroutines, for the fun:
 
 ```Perl6
 sub e_continued_fraction($n) {
