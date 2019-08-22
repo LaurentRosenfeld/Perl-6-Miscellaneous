@@ -76,7 +76,7 @@ The five test cases work fine:
     ok 4 - Test 4
     ok 5 - Test 5
 
-The decoding percent-encoded octets is a bit more complicated than the others and it might help to explain it a bit further. The first line:
+The decoding of percent-encoded octets is a bit more complicated than the others and it might help to explain it a bit further. The first line:
 
         s:g/'%'(<xdigit>**2)     # Decoding percent-encoded octets
         
@@ -93,7 +93,7 @@ Here, we have used five test cases, one for each of the normalization actions, b
 
 It seems that this challenge encountered limited enthusiasm, since only 6 of the challengers (including myself) suggested Perl 6 solutions. Having said that, I should add that reviewing them took me quite some time, since some of the solutions are fairly long.
 
-Some participants wrote full-fledged grammars, while others used a series of regexes. This is most probably better than my poor 6 regexes. I actually thought about writing a grammar, but was a bit too lazy for that (although I already wrote a grammar for URLs in the context of Perl Weekly Challenge 17 and could have partly reused that). I also thought that regexes would be good enough in this case - in a real world situation, I would certainly also write a grammar. Anyway, once the URL is split up in various components (scheme, user info, host, port, etc.), it is obviously safer and more robust to apply the changes to the various parts, rather than applying blindly regexes to the whole URL. 
+Some participants wrote full-fledged grammars, while others used a series of regexes. A grammar is most probably better than my poor 6 regexes. I actually thought about writing a grammar, but was a bit too lazy for that (although I already wrote a grammar for URLs in the context of Perl Weekly Challenge 17 and could have partly reused that). I also thought that regexes would be good enough in this case - in a real world situation, I would certainly also write a grammar. Anyway, once the URL is split up in various components (scheme, user info, host, port, etc.), it is obviously safer and more robust to apply the changes to the various parts, rather than applying blindly regexes to the whole URL. 
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/arne-sommer/perl6/ch-2.p6) wrote a full grammar to parse the various components of a URL. 
 
@@ -101,12 +101,12 @@ Some participants wrote full-fledged grammars, while others used a series of reg
 
 [Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/kevin-colyer/perl6/ch-2.p6) also used a full grammar to parse the various components of a URL and even went further, since he also wrote an actions class to perform some of the normalization actions, as well as an 90 line test plan. Altogether, his program has 279 code lines!
 
-[noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/noud/perl6/ch-2.p6) and [Ruben Westerberg](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/ruben-westerberg/perl6/ch-2.p6) used a series a regexes similar in spirit to what I did.
+[Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/noud/perl6/ch-2.p6) and [Ruben Westerberg](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/ruben-westerberg/perl6/ch-2.p6) used a series a regexes similar in spirit to what I did.
 
 
 ## See Also
 
-Only one blog post this week, but well worth reading:
+Only one blog post on this subject and related to Perl 6, but well worth reading:
 
 * Arne Sommer: https://perl6.eu/eulers-url.html
 
