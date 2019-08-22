@@ -115,7 +115,7 @@ See also the following blog posts:
 * Jaldhar Y. Vyas: https://www.braincells.com/perl/2019/08/perl_weekly_challenge_week_20.html
 * Damian Conway: http://blogs.perl.org/users/damian_conway/2019/08/with-friends-like-these.html
 
-*Update*
+*Update: *
 Yary did not participate to the challenge, but posted on Aug. 22, 2019 [Splitting on a change, Challenge 20 Task 1](http://blogs.perl.org/users/yary/2019/08/splitting-on-a-change-challenge-20-task-1.html) that notices that the challenge asked "to accept a string from command line and split it on change of character", and further comments: "But every solution that I read in the recap looked for runs of the same character instead of the literal interpretation of the challenge." I'm not sure whether I fully understand his objection, as these seem equivalent to me, but I guess that Yary would like to see something that detects directly places where there is a character change.. The blog's code examples are mainly in Perl 5, but the last one is in Perl 6:
 
     say "ABBCDEEF".split(/<?before (.) {} :my $c=$0;><!after $c> /).perl
