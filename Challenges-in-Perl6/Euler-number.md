@@ -24,7 +24,7 @@ So, job done? Well, maybe it is sort of cheating, and we don't want to cheat. Le
 
 Let's try the formula investigated by Jacob Bernoulli in 1683: *e* is equal to this limit:
 
-![alt text](./euler1.jpg "Bernoulli's formula for e")
+![alt text](./Euler1.jpg "Bernoulli's formula for e")
 
 We can just use this formula with a large input number:
 
@@ -59,7 +59,7 @@ It works, but the formula converges very slowly: with an input number of 10,000,
 
 Let's try with a better formula. Isaac Newton found in 1669 that what is known as Euler's constant is equal to the  sum of the following infinite series (sometimes called the Maclauring series expansion):
 
-![alt text](./euler2.jpg "New formula for e")
+![alt text](./Euler2.jpg "New formula for e")
 
  where `n!` is the factorial of `n`, i.e. the product of all positive integers between 1 and `n`.
 
@@ -180,7 +180,7 @@ sub e_continued_fraction($n) {
 
 [Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/noud/perl6/ch-1.p6) used the following continued fraction:
 
-![alt text](./euler3.jpg "Continued fraction for e")
+![alt text](./Euler3.jpg "Continued fraction for e")
 
 and computed it for the first 50 steps (which yields 2.7182818284590455).
 
