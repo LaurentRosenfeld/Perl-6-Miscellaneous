@@ -24,7 +24,7 @@ So, job done? Well, maybe it is sort of cheating, and we don't want to cheat. Le
 
 Let's try the formula investigated by Jacob Bernoulli in 1683: *e* is equal to this limit:
 
-![alt text](./Euler1.jpg "Bernoulli's formula for e")
+![alt text](./Euler1.jpg "Bernoulli's limit formula for e")
 
 We can just use this formula with a large input number:
 
@@ -59,7 +59,7 @@ It works, but the formula converges very slowly: with an input number of 10,000,
 
 Let's try with a better formula. Isaac Newton found in 1669 that what is known as Euler's constant is equal to the  sum of the following infinite series (sometimes called the Maclauring series expansion):
 
-![alt text](./Euler2.jpg "New formula for e")
+![alt text](./Euler2.jpg "Sum of infinite series for e")
 
  where `n!` is the factorial of `n`, i.e. the product of all positive integers between 1 and `n`.
 
@@ -124,7 +124,7 @@ and can display many more with higher input values.
 
 ## Alternative Solutions
 
-There is more than on way to do it. In some cases in the past, many solutions to the Perl Weekly Challenge look similar. Not so with Euler's number: challengers used quite a number different formulas to compute *e* and, even when they used the same formula, the implementations were markedly different.
+There is more than on way to do it. In some cases in the past, many solutions to the Perl Weekly Challenge looked similar. Not so with Euler's number: challengers used quite a number different formulas to compute *e* and, even when they used the same formula, the implementations were markedly different.
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/arne-sommer/perl6/ch-1.p6) used the same formula as my second one above, but coded it very differently: he made a lazy infinite list of the `1/n!` terms and and then computed the sum for the *j* terms. 
 
@@ -186,7 +186,7 @@ and computed it for the first 50 steps (which yields 2.7182818284590455).
 
 [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/athanasius/perl6/ch-1.p6) used yet another, much more recent and apparently significantly  faster, method suggested in Jan. 2004 by Harlan J. Brothers in a paper entitled [Improving the Convergence of Newton's Series Approximation for e](http://www.brotherstechnology.com/docs/Improving_Convergence_(CMJ-2004-01).pdf).
 
-{Jaldar H Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/jaldhar-h-vyas/perl6/ch-1.sh) cheated as blatantly as I did in my first suggestion, also with a code length of a mere 5 characters, but yet managed to do it with a different syntax (method call syntax)..
+[Jaldar H Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/jaldhar-h-vyas/perl6/ch-1.sh) cheated as blatantly as I did in my first suggestion, also with a code length of a mere 5 characters, but yet managed to do it with a different syntax (method call syntax). Yes, TIMTOWTDI.
 
 ## See Also
 
