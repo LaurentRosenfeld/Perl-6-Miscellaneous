@@ -6,7 +6,7 @@ The challenge reads as follows:
 
 *Write a script that takes 2 or more strings as command line parameters and print the longest common substring. For example, the longest common substring of the strings “ABABC”, “BABCA” and “ABCBA” is string “ABC” of length 3. Other common substrings are “A”, “AB”, “B”, “BA”, “BC” and “C”. Please check this [wiki page](https://en.wikipedia.org/wiki/Longest_common_substring_problem) for details.*
 
-I can see at least two ways to tackle the problem (to simplify, let's say between two strings). One is to have two nested loops, one on the letters of the first string and the second one on the letters of the second string, and to store the substrings (or, possibly, the longest so far). The other is to generate all the substrings of each word and then to compare them. I used the first approach for solving the challenge in Perl 5 and the second one in Perl 6 (because P6 has some functionalities making the second approach easy and interesting, and probably quite efficient). Since this blog is about Perl 6, I'll detail only the second approach.
+I can see at least two ways to tackle the problem (to simplify, let's say, for the time being, between two strings). One is to have two nested loops, one on the letters of the first string and the second one on the letters of the second string, and to store the substrings (or, possibly, the longest so far). The other is to generate all the substrings of each word and then to compare them. I used the first approach for solving the challenge in Perl 5 and the second one in Perl 6 (because P6 has some functionalities making the second approach easy and interesting, and probably quite efficient). Since this blog is about Perl 6, I'll detail only the second approach.
 
 Note that the program below will consider only extended ASCII strings for simplicity. A couple of very minor changes might be needed for dealing properly with full Unicode strings.
 
@@ -14,7 +14,7 @@ Note that the program below will consider only extended ASCII strings for simpli
 
 To generate all the substrings of a given string, we could use the regex engine with the `:exhaustive` adverb, to get all the overlapping matches. For example, consider this Perl 6 one-liner:
 
-    perl6 -e 'say ~$_ for sort "ABC" ~~ m:exhaustive/.+/
+    $ perl6 -e 'say ~$_ for sort "ABC" ~~ m:exhaustive/.+/
     A
     AB
     ABC
@@ -48,7 +48,7 @@ The `rotor` method can take as parameter a key-value pair, whose value (the seco
     > (1..10).rotor(2 => 1)
     ((1 2) (4 5) (7 8))
 
-As you can see, we obtain pairs of values, with a gap of 1 between the pairs (item 3, 6 and 9 are omitted from the list. Now, the gap can also be negative and, in that case, we get all successive pairs from the range:
+As you can see, we obtain pairs of values, with a gap of 1 between the pairs (item 3, 6 and 9 are omitted from the list). Now, the gap can also be negative and, in that case, we get all successive pairs from the range:
 
     > (1..10).rotor(2 => -1)
     ((1 2) (2 3) (3 4) (4 5) (5 6) (6 7) (7 8) (8 9) (9 10))
@@ -103,17 +103,15 @@ My solution returns only one longest substring, even when there are two (or more
 
 ## Alternative Solutions
 
-[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/arne-sommer/perl6/ch-1.p6) decided to generate all possible substrings from each input string and then to incrementally build the set of common substrings using the `∩` set intersection operator (and find the longest common substring at the end). So, something quite similar to what I did above, except that, to generate all the substrings, he manually implemented a nested loop on the letter sequences of a given string.
+[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/arne-sommer/perl6/ch-1.p6) decided to generate all possible substrings from each input string and then to incrementally build the set of common substrings using the `∩` set intersection operator (and find the longest common substring at the end). So, something quite similar to what I did above, except that, to generate all the substrings, he manually implemented two nested loops on the letter sequences of a given string.
 
-[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/mark-senn/perl6/ch-1.p6) also used nested loops to find all the substrings of each of the input strings and stored them in an array `@set` of sets (well actually of 'SetHash' objects). That's a nice idea, but the true beauty of Mark's solution lies in the way he uses the set intersection operator within the reduction metaoperator and sorts the result by substring length to find the LCS and print it, all in one single code line:
+[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/mark-senn/perl6/ch-1.p6) also used nested loops to find all the substrings of each of the input strings and stored them in an array `@set` of sets (well actually of `SetHash` objects). That's a nice idea, but the true beauty of Mark's solution lies in the way he uses the set intersection operator within the reduction metaoperator and sorts the result by substring length to find the LCS and print it, all in one single code line:
 
 ``` perl6 
 ([(&)] @set).keys.sort({.chars}).tail.say;
 ```
 
 I am really impressed. Congratulations, Mark, very good job! One possible minor improvement, though:  you didn't really need to sort the substrings and could have used the [max](https://docs.perl6.org/routine/max) function, for example `.max({.chars})`, which should presumably be more efficient.
-
-[Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/ozzy/perl6/ch-2.p6) 
 
 [Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/simon-proctor/perl6/ch-1.p6) also wrote a subroutine to generate all substrings of a given string. And he also cleverly thought about using the set intersection operator within the reduction metaoperator to find all the common substrings. Simon's final step is a bit more complex than Mark's, because his program finds all the longest common substrings when there is more than one:
 
@@ -158,7 +156,7 @@ This is quite clever, and I must admit that don't think about this easy possible
 
 [Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/ozzy/perl6/ch-2.p6) orighinally implemented two nested loops to find the LCS between two strings. But this solution also can process only two input strings. However, he implemented [another solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/ozzy/perl6/ch-2a.p6) which uses three nested `for`loops to find all the substrings of the input words (two or more) and then uses the intersection operator to find trhe common substrings. This second solution displays all the longest common substrings when there is more than one.
 
-[Fench Chang] interestingly created an infix `LCS` operator. The good thing about creating such an operator is that you can then use it within the reduction operator `[]` to process more than two input strings. I'm afraid, though, that this approach will fail on some input strings. Suppose for example that you want to compare 3 strings, *ABCDEFUVWXY*,  *ABCDEFGHUVWX* and *ABUVWXY*. If I understand correctly, Feng's program first looks for the LCS between the first two strings, and finds *ABCDEF*; then, the script looks for the LCS between *ABCDEF* and *ABUVWXY*, and finds *AB*. But, in reality, *UVWX* was a longer substring common to the three input strings. Well, after having written the preceding sentences, I decided that I should better test to check. So, I copied Feng's `LCS` infix operator definition and tested it with the input strings of my example just above:
+[Fench Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/feng-chang/perl6/ch-1.p6) interestingly created an infix `LCS` operator. The good thing about creating such an operator is that you can then use it within the reduction operator `[]` to process more than two input strings. I'm afraid, though, that this approach will fail on some input strings. Suppose for example that you want to compare 3 strings, *ABCDEFUVWXY*,  *ABCDEFGHUVWX* and *ABUVWXY*. If I understand correctly, Feng's program first looks for the LCS between the first two strings, and finds *ABCDEF*; then, the script looks for the LCS between *ABCDEF* and *ABUVWXY*, and finds *AB*. But, in reality, *UVWX* was a longer substring common to the three input strings. Well, after having written the preceding sentences, I decided that I should better test to check. So, I copied Feng's `LCS` infix operator definition and tested it with the input strings of my example just above:
 
 ``` perl6
 say [LCS] <ABCDEFUVWXY ABCDEFGHUVWX ABUVWXY>.flat;
@@ -184,7 +182,7 @@ His first solution uses a regex with the `:ex` (exhaustive) adverb to find all t
 keys [∩] @strings».match(/.+/, :ex)».Str
 ```
 
-We could then use the builtin `max` function (as I did in my solution), but that returns only one longest substring, whereas Damian wants to find them all. So he decided to augment the `max` function so that it takes a new adverb, `:all` to indicate that we want all the maxima, not just one:
+We could then use the builtin `max` function (as I did in my solution), but that returns only one longest substring, whereas Damian wants to find them all (when there is more than one LCS). So he decided to augment the `max` function so that it takes a new adverb, `:all` to indicate that we want all the maxima, not just one:
 
 ``` perl6
 # "Exhaustive" maximal...

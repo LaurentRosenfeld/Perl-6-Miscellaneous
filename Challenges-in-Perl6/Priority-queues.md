@@ -6,17 +6,17 @@ The challenge reads as follows:
 
 *Write a script to implement Priority Queue. It is like regular queue except each element has a priority associated with it. In a priority queue, an element with high priority is served before an element with low priority. Please check this wiki page for more information. It should serve the following operations:*
 
-* 1) **is_empty**: check whether the queue has no elements.
+* **is_empty**: check whether the queue has no elements.
 
-* 2) **insert_with_priority**: add an element to the queue with an associated priority.
+* **insert_with_priority**: add an element to the queue with an associated priority.
 
-* 3) **pull_highest_priority_element**: remove the element from the queue that has the highest priority, and return it. If two elements have the same priority, then return element added first.
+* **pull_highest_priority_element**: remove the element from the queue that has the highest priority, and return it. If two elements have the same priority, then return element added first.
 
 ## My solutions
 
 There are numerous ways to design simple priority queues (at least when performance is not an issue, for instance if the data set isn't very large). For example, it might be sufficient to maintain an array of arrays (AoA), where each of the arrays is a pair containing the item and associated priority. Or an array of hashes (AoH) based on the same idea. This means that each time we want to pull the highest priority element, we need to traverse the whole data structure to find the item with the highest priority. This may be quite slow when there are many items, but this may not matter if our data structure only has a few dozen items.
 
-Another way is to build a hash of arrays (HoA), where the hash keys are the priorities and the hash values are references to arrays. When the number of priorities is relatively small (compared to the number of items in the queues), this tends to be more efficient, but note that we still need to traverse the keys of the hash until we find the highest priority. An AoA with the index being the priority and the sub-hashes the item might be more efficient (because the priorities remain sorted), but this requires the priorities to be relatively small positive integers. We still have to traverse the top data structure until we find the first non-empty sub-array. This could be done as follows: as follows:
+Another way is to build a hash of arrays (HoA), where the hash keys are the priorities and the hash values are references to arrays. When the number of priorities is relatively small (compared to the number of items in the queues), this tends to be more efficient, but note that we still need to traverse the keys of the hash until we find the highest priority. An AoA with the index being the priority and the sub-hashes the item might be more efficient (because the priorities remain sorted), but this requires the priorities to be relatively small positive integers. We still have to traverse the top data structure until we find the first non-empty sub-array. This could be done as follows:
 
 ``` perl6
 use v6;
@@ -333,7 +333,7 @@ Basically, we want to manage our priorities with a heap, and each priority will 
 
     [[10 [10 20]] [5 [5 15]] [2 [2 4 8 14 16]] [1 [1 7 11 13 17 19]] [3 [3 6 9 12 18]]]
 
-The first item in the queue displayed above, `[10 [10 20]]`, is the data structure for priority 10, which contains two elements, 10 and 20. The next one is for priority 5. And so on.
+The first item in the queue displayed above, `[10 [10 20]]`, is the data structure for priority 10, which contains two elements, 10 and 20. The next one (`[5 [5 15]]`)  is for priority 5. And so on.
 
 When we are inserting elements (item and priority), we first call `insert_with_prio` to check whether there is already an array for the given priority. If it already exists, we just add the item to the array of elements associated with this priority. If there no array with such priority, then we call `add-to-queue` to add a priority data structure into the heap (and reorganize the heap as we've done before). Similarly, when we call `pull_highest_prio`, we just pick up and return the first element from the data array of the first priority item. In the event that the data array of a given priority becomes empty, then we call `take-from-heap` to remove the priority data structure from the heap (and reorganize the heap as we've done before).
 
@@ -409,14 +409,14 @@ for 1..20 -> $num {
         $num %% 2  ?? 2  !! 
         1);
 } 
-for 1..30 -> $num {
+for 1..20 -> $num {
     last if is-empty;
     say pull-prio;
 }
 say "Empty queue" if is-empty();
 ```
 
-This program displays more or less the same as before:
+This program displays more or less the same as our previous implementation:
 
     $ perl6  heap_queue.p6
     10
@@ -492,7 +492,7 @@ Several of the challengers used the `sort` built-in function to find the highest
 
 [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/joelle-maslak/perl6/ch-2.p6) defined a `Priority-Queue` class with a hash of arrays attribute. Her class also has a `$!max` scalar attribute, which keeps track of the highest priority in the data structure and makes it possible to pull the highest priority element without having to traverse the keys of the hash. Quite clever!
 
-[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/mark-senn/perl6/ch-2.p6)  is one of the only two persons (well, three including myself) who did not use OOP. implemented two parallel arrays, `@priority` and `@value`. Mark`s code is quite simple and relatively short.
+[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/mark-senn/perl6/ch-2.p6)  is one of the only two persons (well, three including myself) who did not use OOP. He implemented two parallel arrays, `@priority` and `@value`. Mark`s code is quite simple and relatively short.
 
 [Ruben Westerberg](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-018/ruben-westerberg/perl6/ch-2.p6) also did not use OOP. He created a hash of arrays.
 

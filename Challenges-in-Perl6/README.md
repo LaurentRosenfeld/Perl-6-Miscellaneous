@@ -10,7 +10,9 @@ At this point, the following posts are available:
 * [Splitting Strings on Character Change](./Splitting-strings.md) (PWC # 20);
 * [Amicable Numbers](./Amicable-numbers.md) ((PWC # 20));
 * [Months with Five Weekends](./Five-weekends-in-a-month.md) (PWC # 19);
-* [Wrapping Lines](wrapping-lines.md) (PWC # 19).
+* [Wrapping Lines](wrapping-lines.md) (PWC # 19);
+* [Longest substring](Longest-sunstring.md) (PWC # 18);
+* {Priority queues](Priority-queues.md) (PWC # 18).
 
 I'll try to review solutions for past challenges, as time permits, but only those which are (IMHO) the most interesting ones.
 
