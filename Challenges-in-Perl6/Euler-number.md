@@ -186,7 +186,7 @@ and computed it for the first 50 steps (which yields 2.7182818284590455).
 
 [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/athanasius/perl6/ch-1.p6) used yet another, much more recent and apparently significantly  faster, method suggested in Jan. 2004 by Harlan J. Brothers in a paper entitled [Improving the Convergence of Newton's Series Approximation for e](http://www.brotherstechnology.com/docs/Improving_Convergence_(CMJ-2004-01).pdf).
 
-[Jaldar H Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/jaldhar-h-vyas/perl6/ch-1.sh) cheated as blatantly as I did in my first suggestion, also with a code length of a mere 5 characters, but yet managed to do it with a different syntax (method call syntax). Yes, TIMTOWTDI.
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-021/jaldhar-h-vyas/perl6/ch-1.sh) cheated as blatantly as I did in my first suggestion, also with a code length of a mere 5 characters, but yet managed to do it with a different syntax (method call syntax). Yes, TIMTOWTDI.
 
 ## See Also
 
