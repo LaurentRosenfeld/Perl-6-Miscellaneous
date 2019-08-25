@@ -202,5 +202,3 @@ Please let me know if I forgot any of the challengers or if you think my explana
 
 If you want to participate to the Perl Weekly Challenge, please connect to [this site](https://perlweeklychallenge.org/).
 
-
-
