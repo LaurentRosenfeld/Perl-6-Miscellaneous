@@ -6,7 +6,7 @@ The challenge reads as follows:
 
 *Write a script to print first 10 Sexy Prime Pairs. Sexy primes are prime numbers that differ from each other by 6. For example, the numbers 5 and 11 are both sexy primes, because 11 - 5 = 6. The term “sexy prime” is a pun stemming from the Latin word for six: sex. For more information, please checkout [wiki](https://en.wikipedia.org/wiki/Sexy_prime) page.*
 
-My first question, when reading this definition, was whether sexy primes had to be consecutive prime numbers. The example provided (as well as those found in the the Wikipedia page) shows that it needs not be the case: 5 and 11 are not consecutive primes (since 7 is also prime). If sexy primes had to be consecutive primes, then the first such pair would be (23, 29). With that answer to my question, it seems to me that all we need to do is to look at each prime number *p* and check whether *p + 6* is prime (and stop as soon as we have 10 sexy pairs.
+My first question, when reading this definition, was whether sexy primes had to be consecutive prime numbers. The example provided (as well as those found in the the Wikipedia page) shows that it needs not be the case: 5 and 11 are not consecutive primes (since 7 is also prime). If sexy primes had to be consecutive primes, then the first such pair would be (23, 29). With that answer to my question, it seems to me that all we need to do is to look at each prime number *p* and check whether *p + 6* is prime (and stop as soon as we have 10 sexy pairs).
 
 Note that (1, 7) is not a sexy prime pair (despite having a gap of 6), because 1 is not considered to be a prime number. Therefore, to avoid the risk of finding a false sexy prime pair, we will start our search with number 2.
 
@@ -71,7 +71,7 @@ Note the use of the `hyper` method to enable the processing of items in parallel
 Nil until is-prime(++$prime);    
 # Now do something with $prime
 ```
-Otherwise, he defines a `$partner` of `prime` as prime + 6`, checks if the partner is prime and, if so, stores `[$prime, $partner]` into a `@pairs` array. His main `while` loop stops when the `@pairs` array has ten elements.
+Otherwise, he defines a `$partner` of `$prime` as `$prime + 6`, checks if the partner is prime and, if so, stores `[$prime, $partner]` into a `@pairs` array. His main `while` loop stops when the `@pairs` array has ten elements.
 
 [Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/jaldhar-h-vyas/perl6/ch-1.sh) made a Perl 6 one-liner fairly similar to my second solution:
 ``` Perl6
@@ -97,7 +97,7 @@ Yet does not say how he knew he could stop his range at 55. His second solution 
 
 ## See Also
 
-Three blog post this time:
+Three blog posts this time:
 
 Arne Sommer: https://perl6.eu/prime-lzw.html. Arne adds some bonuses: sexy prime triplets, sexy prime quadruplets, and even one sexy prime quintuplet.
 
