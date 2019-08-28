@@ -1,4 +1,4 @@
-# The Lempel–Ziv–Welch (LZW)Compression Algorithm
+# The Lempel–Ziv–Welch (LZW) Compression Algorithm
 
 This is derived from my [blog post](http://blogs.perl.org/users/laurent_r/2019/08/perl-weekly-challenge-22-sexy-prime-pairs-and-compression-algorithm.html) made in answer to the [Week 22 of the Perl Weekly Challenge](https://perlweeklychallenge.org/blog/perl-weekly-challenge-022/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a> as well as answers made by others to the same challenge.
 
@@ -18,7 +18,7 @@ Note that the Wikipedia description specifies a stop character (`#`) to indicate
 
 ### My Solution
 
-For a start, we will use an input string ('TOBEORNOTTOBEORTOBEOR...') consisting only of capital letters (`'A'..'Z'`), as in the Wikipedia article, and populate our initial hash `%dict` with corresponding numeric codes between 0 and 25. Then we start at looking at the string to be encoded. The first letter *T* exists in `%dict`, so we look for a two letter sequence, *TO*, which does not exists in thez hash; at this point we add the code for *T* to the result and add to `%dict` a new code (in this case 26) corresponding to *TO*. And so on.
+For a start, we will use an input string ('TOBEORNOTTOBEORTOBEOR...') consisting only of capital letters (`'A'..'Z'`), as in the Wikipedia article, and populate our initial hash `%dict` with corresponding numeric codes between 0 and 25. Then we start at looking at the string to be encoded. The first letter *T* exists in `%dict`, so we look for a two letter sequence, *TO*, which does not exists in the hash; at this point we add the code for *T* to the result and add to `%dict` a new code (in this case 26) corresponding to *TO*. And so on.
 
 The beginning of the compressed sequence might be as follows:
 
@@ -117,13 +117,13 @@ we obtain the following output:
 
 In a real implementation, we would need to set some limit to the dictionary size, because memory is limited and, also, it doesn't really make sense to keep adding longer and longer sequences of characters as, the longer they grow, the more unlikely we will find repetitions. On course, the `encode` and `decode` subroutines have to agree on that size limit. There was no reason to implement such a size limit for our tiny toy example.
 
-If you're interested with data compression techniques, you might also want to take a look at the exercise on Huffman coding (as well as its solution) at the end of chapter 10 of my *Think Perl 6* book, which can be downloaded for free in PDF on this [same github repository](https://github.com/LaurentRosenfeld/thinkperl6/tree/master/PDF).
+If you're interested with data compression techniques, you might also want to take a look at the exercise on Huffman coding (as well as its solution) at the end of chapter 10 of my *Think Perl 6* book, which can be downloaded for free in PDF format on this [same github repository](https://github.com/LaurentRosenfeld/thinkperl6/tree/master/PDF).
 
 ## Alternative Solutions
 
 The description of the LZW algorithm is a fairly detailed specification that leaves relatively little room for imagination. Therefore, the solutions suggested by the challengers are mostly looking very similar, usually only implementation details outside the algorithm per se vary.
 
-[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/arne-sommer/perl6/ch-2.p6) started with an alphabet and a hash consisting only of the letters present in the string to be compressed. This make a smaller alphabet and initial dictionary size, but this means that the alphabet needs to be transmitted to the decoding subroutine. Besides that, the algorithm is essentially the same, except that Arne converts the compressed message into a binary string (ie. a string comprised of 0 and 1 characters).
+[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/arne-sommer/perl6/ch-2.p6) started with an alphabet and a hash consisting only of the letters present in the string to be compressed. This make a smaller alphabet and initial dictionary size, but this means that the alphabet needs to be transmitted to the decoding subroutine. Besides that, the algorithm is essentially the same, except that Arne converts the compressed message into a binary string (i.e. a string comprised of 0 and 1 characters).
 
 [Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/ruben-westerberg/perl6/ch-2.p6) also started with a dictionary consisting only of the letters present in the string to be compressed. His `encode` subroutine does what it is supposed to do. But his `decode` subroutine uses the full dictionary prepared by `encode` as a parameter, so that it does not have anything to do other than a simple dictionary lookup:
 
@@ -163,13 +163,13 @@ OK, fair enough, this is simple and it works, but, IMHO, that's not really the s
     #         ya        256             ay [259]
     #         da        258            yad [260]
 
-[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/simon-proctor/perl6/ch-2.p6) created a program with not less than 8 multi MAIN subroutines, to provide possibilities to encode or decode from a passed argument, from STDIN, from a file, etc. He used an alphabet somawhat intermediate between only upper case ASCII letters and full extended ASCII range, with all alphanumerical characters and some additional punctuation and other signs:
+[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/simon-proctor/perl6/ch-2.p6) created a program with not less than 8 multi MAIN subroutines, to provide possibilities to encode or decode from a passed argument, from STDIN, from a file, etc. He used an alphabet somewhat intermediate between only upper case ASCII letters and full extended ASCII range, with all alphanumerical characters and some additional punctuation and other signs:
 
 ``` Perl6
 subset ValidToEncode of Str where m/^<[a..z A..Z 0..9 \  _ \n \. , ]>* \n?$/;
 ```
 
-This subset is used in the signature of the `encode-data` multi method to accept or reject input. The output of that method is a string of space seperated numbers.
+This subset is used in the signature of the `encode-data` multi method to accept or reject input. The output of that method is a string of space separated numbers.
 
 [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/athanasius/perl6/ch-2.p6) compressed the input into an array of numeric codes. His starting dictionary contains all extended ASCII or ISO-8859-1) codes between 0 and 255. His program nicely outputs some statistics about the compression, for example (with a highly repetitive input string):
 
@@ -185,11 +185,11 @@ This subset is used in the signature of the `encode-data` multi method to accept
   
 [Jaldar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/jaldhar-h-vyas/perl6/ch-2.p6)'s starting alphabet also contains all extended ASCII characters with codes between 0 and 255, although his test uses a string with only a few upper case ASCII letters (`A..Z`).
 
-[Yet Ebreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/yet-ebreo/perl6/ch-2.p6) also started with a dictionary containing all extended ASCII characters with codes between 0 and 255. 
+[Yet Ebreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/yet-ebreo/perl6/ch-2.p6) also started with a dictionary containing all extended ASCII characters with codes between 0 and 255. His encoded result is an array of integers, as for many of us. For someone who had never written any script in Perl 6 just days before, Yet's code is pretty clean and even often quite idiomatic (although some syntax constructs are obviously influenced by his knowledge of Perl 5). 
 
 [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/joelle-maslak/perl6/ch-2.p6) wrote a full OOP program with three classes, `Dictionary`,  `Bitwise-Write`, and `Bitwise-Read`. Her solution is the most complete one, as it is one of the only two that actually perform binary encoding of the compressed data.
 
-[Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/randy-lauen/perl6/ch-2.p6) is the other most complete solution that provides actual binary encoding of the commpressed data. For this, it uses lizmat's [P5pack](https://github.com/lizmat/P5pack) module, which implements in Perl 6 the Perl 5 `pack` and `unpack` built-ins. He used this module presumably because he found it easier since his P6 version is a port of his earlier P5 implementation.
+[Randy Lauen](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/randy-lauen/perl6/ch-2.p6) is the other most complete solution that provides actual binary encoding of the compressed data. For this, it uses lizmat's [P5pack](https://github.com/lizmat/P5pack) module, which implements in Perl 6 the Perl 5 `pack` and `unpack` built-ins. He used this module presumably because he found it easier since his P6 version is a port of his earlier P5 implementation.
 
 ## See Also
 
