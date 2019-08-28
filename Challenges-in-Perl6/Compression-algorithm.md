@@ -115,17 +115,19 @@ we obtain the following output:
     273 258 101 272 116 104 97 116 39 115 268 104 260 113 117 101 115 116 105 111 110]
     To be or not to be, to be or not to be, that's the question
 
-In a real implementation, we would need to set some limit to the dictionary size, because memory is limited and, also, it doesn't really make sense to keep adding longer and longer sequences of characters as, the longer they grow, the more unlikely we will find repetitions. On course, the `encode` and `decode` subroutines have to agree on that size limit. There was no reason to implement such a size limit for our tiny toy example.
+Here, we have 44 the compressed codes for an input string of 59 bytes; i.e. a compression ration of about 0.74. 
 
-If you're interested with data compression techniques, you might also want to take a look at the exercise on Huffman coding (as well as its solution) at the end of chapter 10 of my *Think Perl 6* book, which can be downloaded for free in PDF format on this [same github repository](https://github.com/LaurentRosenfeld/thinkperl6/tree/master/PDF).
+In a real implementation, we would need to set some limit to the dictionary size, because memory is limited and, also, it doesn't really make sense to keep adding longer and longer sequences of characters as, the longer they grow, the more unlikely we will find repetitions. On course, the `encode` and `decode` subroutines have to agree on that size limit. There was no reason to implement such a size limit for our tiny toy examples.
+
+If you're interested with data compression techniques, you might also want to take a look at the exercise on Huffman coding (as well as its solutions) at the end of chapter 10 of my *Think Perl 6* book, which can be downloaded for free in PDF format on this [same github repository](https://github.com/LaurentRosenfeld/thinkperl6/tree/master/PDF).
 
 ## Alternative Solutions
 
-The description of the LZW algorithm is a fairly detailed specification that leaves relatively little room for imagination. Therefore, the solutions suggested by the challengers are mostly looking very similar, usually only implementation details outside the algorithm per se vary.
+The description of the LZW algorithm is a fairly detailed specification that leaves relatively little room for imagination. Therefore, the solutions suggested by the challengers are mostly looking very similar, usually only implementation details outside the algorithm itself vary.
 
-[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/arne-sommer/perl6/ch-2.p6) started with an alphabet and a hash consisting only of the letters present in the string to be compressed. This make a smaller alphabet and initial dictionary size, but this means that the alphabet needs to be transmitted to the decoding subroutine. Besides that, the algorithm is essentially the same, except that Arne converts the compressed message into a binary string (i.e. a string comprised of 0 and 1 characters).
+[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/arne-sommer/perl6/ch-2.p6) started with an alphabet and a hash consisting only of the letters occurring in the string to be compressed. This make a smaller alphabet and initial dictionary size, but this means that the alphabet needs to be transmitted to the decoding subroutine. Besides that, the algorithm is essentially the same, except that Arne converts the compressed message into a binary string (i.e. a string comprised of 0 and 1 characters).
 
-[Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/ruben-westerberg/perl6/ch-2.p6) also started with a dictionary consisting only of the letters present in the string to be compressed. His `encode` subroutine does what it is supposed to do. But his `decode` subroutine uses the full dictionary prepared by `encode` as a parameter, so that it does not have anything to do other than a simple dictionary lookup:
+[Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/ruben-westerberg/perl6/ch-2.p6) also started with a dictionary consisting only of the letters occurring in the string to be compressed. His `encode` subroutine does what it is supposed to do. But his `decode` subroutine uses the full dictionary prepared by `encode` as a parameter, so that it does not have anything to do other than a simple dictionary lookup:
 
 ```Perl6
 sub decode(@dict, @in, @out) {
@@ -185,7 +187,7 @@ This subset is used in the signature of the `encode-data` multi method to accept
   
 [Jaldar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/jaldhar-h-vyas/perl6/ch-2.p6)'s starting alphabet also contains all extended ASCII characters with codes between 0 and 255, although his test uses a string with only a few upper case ASCII letters (`A..Z`).
 
-[Yet Ebreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/yet-ebreo/perl6/ch-2.p6) also started with a dictionary containing all extended ASCII characters with codes between 0 and 255. His encoded result is an array of integers, as for many of us. For someone who had never written any script in Perl 6 just days before, Yet's code is pretty clean and even often quite idiomatic (although some syntax constructs are obviously influenced by his knowledge of Perl 5). 
+[Yet Ebreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/yet-ebreo/perl6/ch-2.p6) also started with a dictionary containing all extended ASCII characters with codes between 0 and 255. His encoded result is an array of integers, as for many of us. For someone who had never written any script in Perl 6 just days before, Yet's code is pretty clean and even often quite idiomatic (although some syntax constructs are obviously influenced by his knowledge of Perl 5, but I guess you could probably say the same thing about me). 
 
 [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-022/joelle-maslak/perl6/ch-2.p6) wrote a full OOP program with three classes, `Dictionary`,  `Bitwise-Write`, and `Bitwise-Read`. Her solution is the most complete one, as it is one of the only two that actually perform binary encoding of the compressed data.
 
