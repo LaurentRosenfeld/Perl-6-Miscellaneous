@@ -3,15 +3,16 @@
 This is derived from my [blog post](http://blogs.perl.org/users/laurent_r/2019/07/-perl-weekly-challenge-16-pythagoras-pie.html) made in answer to the [Week 22 of the Perl Weekly Challenge](https://perlweeklychallenge.org/blog/perl-weekly-challenge-016/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a> as well as answers made by others to the same challenge.
 
 *At a party a pie is to be shared by 100 guests. The first guest gets 1% of the pie, the second guest gets 2% of the remaining pie, the third gets 3% of the remaining pie, the fourth gets 4% and so on.*
-* Write a script that figures out which guest gets the largest piece of pie. (Challenge proposed by Jo Christian Oterhals)*
 
-The first guest gets 1% of the whole pie. The second guest gets 2% of 99%, i.e. 1.98%. And so no: each guest gets in turn a larger share of what is left of the pie, but, at the same time, what is left of the pie gets smaller and smaller. So, intuitively, there must be a point where the share sizes start diminishing. If there was a 101st guest, she would get nothing, since the 100th guest took everything that is left (in fact a very tiny share).
+*Write a script that figures out which guest gets the largest piece of pie. (Challenge proposed by Jo Christian Oterhals)*
+
+The first guest gets 1% of the whole pie. The second guest gets 2% of 99%, i.e. 1.98%. And so on: each guest gets in turn a larger share of what is left of the pie, but, at the same time, what is left of the pie gets smaller and smaller. So, intuitively, there must be a point where the share sizes start diminishing. If there was a 101st guest, she would get nothing, since the 100th guest took everything that is left (in fact a very tiny share).
 
 This pie has nothing to do with the famous ancient Greek mathematician. The name of this puzzle apparently comes the Dutch *Pythagoras* magazine in which it was first published.
 
 ## My solutions
 
-###Using a One-Liner Script to Display Each Guest's Share of the Pie
+### Using a One-Liner Script to Display Each Guest's Share of the Pie
 
 It is quite easy to write a Perl 6 one-liner to display the share of each guest. Given that the share become really minuscule after a while, I only tried to print the shares only for the first 50 guests. In the following one-liner script, `$p` represents each guest, `$r` the fraction of the pie that remains at any given point, and `$sh` is a constant representing the share. We display the guest number, what remains of the pie and the share taken by the guest:
 
@@ -149,7 +150,7 @@ my @slices = (0..$guests).map: -> $n is copy {
 ```
 It is then again a piece of cake to find the largest share.
 
-{Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/simon-proctor/perl6/ch-1.p6) also used `FatRat` numbers for a better accuracy. His program uses a `for` loop to compute iteratively the shares and keep record of the largest share so far.
+[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/simon-proctor/perl6/ch-1.p6) also used `FatRat` numbers for a better accuracy. His program uses a `for` loop to compute iteratively the shares and keep record of the largest share so far.
 
 [Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/kevin-colyer/perl6/ch-1.p6) used essentially the same algorithm. One of his nice innovation is that his solution keeps track of the `$fattestGuest` and the `$biggestSlice` on the fly while computing the slices. [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/athanasius/perl6/ch-1.p6) also used the same iterative approach, except that he deliberately used `Real` numbers for the shares and remainders. 
 
