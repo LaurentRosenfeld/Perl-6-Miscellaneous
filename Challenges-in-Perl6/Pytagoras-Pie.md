@@ -152,7 +152,7 @@ my $pythagoras-pie := gather
   }
 }
 ```
-It is then ~~a share of a pie~~ piece of cake to find the largest part with the `max` built-in routine (limiting the values to the `0..100`, since the `max` routine doesn't work too well on an infinite list. I really like this imaginative approach.
+It is then ~~a share of a pie~~ a piece of cake to find the largest part with the `max` built-in routine (limiting the values to the `0..100`, since the `max` routine doesn't work too well on an infinite list. I really like this imaginative approach.
 
 [Francis J. Whittle](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/fjwhittle/perl6/ch-1.p6) used `FatRat` numbers to get accurate computation. He computed the slices is a nice functional way:
 ``` Perl6
@@ -165,11 +165,9 @@ my @slices = (0..$guests).map: -> $n is copy {
 ```
 It is then again a piece of cake to find the largest share.
 
-[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/simon-proctor/perl6/ch-1.p6) also used `FatRat` numbers for a better accuracy. His program uses a `for` loop to compute iteratively the shares and to keep record of the largest share so far.
+[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/simon-proctor/perl6/ch-1.p6) also used `FatRat` numbers for a better accuracy. His program uses a `for` loop to compute iteratively the shares and to keep record of the largest share so far. [Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/kevin-colyer/perl6/ch-1.p6) used essentially the same algorithm. His solution also keeps track of the `$fattestGuest` and the `$biggestSlice` on the fly while computing the slices. [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/athanasius/perl6/ch-1.p6) also used the same iterative approach, except that he decided to use `Real` numbers for the shares and remainders. 
 
-[Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/kevin-colyer/perl6/ch-1.p6) used essentially the same algorithm. One of his nice innovation is that his solution keeps track of the `$fattestGuest` and the `$biggestSlice` on the fly while computing the slices. [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/athanasius/perl6/ch-1.p6) also used the same iterative approach, except that he decided to use `Real` numbers for the shares and remainders. 
-
-[Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/noud/perl6/ch-1.p6) took a very different, more mathematical-oriented and probably more efficient approach. Noting that a person *n* gets `99 / 100 * 98 / 100 * ... * (99 - n + 1) / 100 * n / 100`, which is equal to `= 99! / (100 - n)! * n / 100^n`, Noud first implements a `!` factorial operator and then computes the shares in just one line:
+[Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/noud/perl6/ch-1.p6) took a very different, more mathematical-oriented and probably more efficient approach. Noting that a person *n* gets `99 / 100 * 98 / 100 * ... * (99 - n + 1) / 100 * n / 100`, which is equal to `99! / (100 - n)! * n / 100^n`, Noud first implements a `!` factorial operator and then computes the shares in just one line:
 
 ```Perl6
 sub postfix:<!>(Int $n) { [*] 1..$n };
@@ -181,7 +179,7 @@ Finding then the lucky guest is then fairly easy:
 ```
 To me, Noud's solution is undoubtedly one of the best ones.
 
-[Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/ozzy/perl6/ch-1.p6) took yet another very different approach. He wrote two mutually recursive subroutines to compute the share and the remainder and then used them to build two lazy infinite lists of shares and remainders. Finally, his script traverses the list of shares to find the largest one.
+[Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/ozzy/perl6/ch-1.p6) took yet another very different approach. He wrote two mutually recursive subroutines to compute the share and the remainder at any step and then used them to build two lazy infinite lists of shares and remainders. Finally, his script traverses the list of shares to find the largest one.
 
 [Fench Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/feng-chang/perl6/ch-1.p6) wrote a very simple `for` loop to populate a `@share` array and then used chained built-in method invocations to find the largest share:
 
@@ -189,7 +187,7 @@ To me, Noud's solution is undoubtedly one of the best ones.
 @share.pairs.max(*.value).key.say;
 ```
 
-[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/jaldhar-h-vyas/perl6/ch-1.p6) used a `map` and chained methods to produce the result is just one statement, and then another code line to print the result:
+[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/jaldhar-h-vyas/perl6/ch-1.p6) used a `map` and chained methods to produce the result is just one (multiline) statement, and then another code line to print the result:
 
 ``` Perl6
 my ($topguest, $topshare) = (1 .. 100)
@@ -205,7 +203,7 @@ my ($topguest, $topshare) = (1 .. 100)
 say "Guest $topguest gets ", sprintf("%0.2f", $topshare), '% of the pie.';
 ```
 
-[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/joelle-maslak/perl6/ch-1.p6) also took another very different (and quite unusual) approach: she wrote two subroutines, `firsts` and `seconds`, which, given an array of arrays (AoA), return respectively a list of the first and of the second elements of each nested array. Her program then uses the `seconds` subroutine to incrementally build a `@slices` AoA, where its nested arrays contain a pair of values, i.e.  the guest number and her or his share, using the sum of the previously allocated shares. Quite a surprising method! Then, the program uses the `max` built-in method on the list of shares (i.e. the return value of `seconds` on the `@shares` AoA) to find the size of the largest share. And finally, it uses a `grep`  on the list of guests (produced by the `firsts` subroutine on the `@shares` AoA) to find all the guests (in fact, only one) who received that largest share. This is both a bit contrived and fairly clever, in fact so clever that I can't resist quoting the whole program:
+[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-016/joelle-maslak/perl6/ch-1.p6) also took another very different (and quite unusual) approach: she wrote two subroutines, `firsts` and `seconds`, which, given an array of arrays (AoA), return respectively a list of the first and of the second elements of each nested array. Her program then uses the `seconds` subroutine to incrementally build a `@slices` AoA, where its nested arrays contain a pair of values, i.e.  the guest number and the allocated share, using the sum of the previously allocated shares. Quite a surprising method! Then, the program uses the `max` built-in method on the list of shares (i.e. the return value of `seconds` on the `@shares` AoA) to find the size of the largest share. And finally, it uses a `grep`  on the list of guests (produced by the `firsts` subroutine on the `@shares` AoA) to find all the guests (in fact, only one) who received that largest share. This is both a bit contrived and fairly clever, in fact so clever that I can't resist quoting the whole program:
 
 ``` Perl6
 my @slices;
@@ -266,9 +264,9 @@ say maxpairs gather for 1..100 -> $N {
 }
 ```
 
-But that wouldn't work, because `maxpairs` is defined only as a method, not as a function. So Damian proceeds with writing a new `maxpairs` function, well, not one, but actually three multi functions doing almost the same, but with different types of input parameters (lists of pairs, hashes, general lists, etc.) that he wants to use in the rest of his post. I won't go in to the details.
+But that wouldn't work, because the `maxpairs` built-in is defined only as a method, not as a function. So Damian proceeds with writing a new `maxpairs` function, well, not one, but actually three multi functions doing almost the same, but with different types of input parameters (lists of pairs, hashes, general lists, etc.) that he wants to use in the rest of his post. I won't go in to the details.
 
-Let me just point out, though, that it is possible to use the built-in `maxpairs` method with `gather/take` with a little bit of syntax tweak;
+Let me just point out, though, that it is possible to use the built-in `maxpairs` method with `gather/take` with just a little bit of syntax tweak;
 
 ``` Perl6
 sub postfix:<%> (Numeric $x) { $x / 100 }; 
@@ -291,11 +289,11 @@ I will not try to summarize all that, you should really read [Damian's post](htt
 
 Three blog posts on the Pythagoras pie:
 
-Arne Sommer: https://perl6.eu/pythagoras-bitcoin.html.
+* Arne Sommer: https://perl6.eu/pythagoras-bitcoin.html.
 
-Athanasius: http://blogs.perl.org/users/athanasius/2019/07/perl-weekly-challenge-016.html. Athanasius observes that if the 100th guest got only one single atom of carbon-12 (not seeing how a piece of the pie could be smaller than a single atom), then the original pie must have a mass of *at least* 21.4 billion metric tons. Oh boy, that was quite a party! I would add that the 10th guest probably had quite some problems finishing his or her share (1.34 billion tons).
+* Athanasius: http://blogs.perl.org/users/athanasius/2019/07/perl-weekly-challenge-016.html. Athanasius observes that if the 100th guest got only one single atom of carbon-12 (not seeing how a piece of the pie could be smaller than a single atom), then the original pie must have a mass of *at least* 21.4 billion metric tons. Oh boy, that was quite a party! I would add that the 10th guest probably had quite some problems finishing his or her share (1.34 billion tons).
 
-Damian Conway: http://blogs.perl.org/users/damian_conway/2019/07/six-slices-of-pie.html.
+* Damian Conway: http://blogs.perl.org/users/damian_conway/2019/07/six-slices-of-pie.html.
 
 
 ## Wrapping up
