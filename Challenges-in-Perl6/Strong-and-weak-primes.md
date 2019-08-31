@@ -269,7 +269,7 @@ I no longer get the `Cannot classify a lazy list` error message, this code works
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-015/arne-sommer/perl6/ch-1.p6) first generated a lazy infinite list of prime numbers. Then, his program iterates over successive integers and, for each such integer, determines whether the prime having that index in the prime array is strong or weak (or neither), and pushes those in the right array. The loop stops when both the `@strong` and `@weak` arrays have at least 10 elements. It then prints 10 elements of each array.
 
-It is worth noting that Arne used a sigil-less variable, `p`, for for his array of primes, as well as for his `for` loop iteration variable (`n`), so that his code to compute whether a prime is strong or weak looks almost exactly the same as the math formulas of the challenge specification:
+It is worth noting that Arne used a sigil-less variable, `p`, for his array of primes, as well as for his `for` loop iteration variable (`n`), so that his code to compute whether a prime is strong or weak looks almost exactly the same as the math formulas of the challenge specification:
 
 ``` Perl6
 if p[n] > ( p[n-1] + p[n+1] ) / 2 { # ...
@@ -304,8 +304,7 @@ my @strong = lazy gather {
 Only two blog posts on the strong and weak primes, as far as can say:
 
 * Arne Sommer: https://perl6.eu/prime-vigenere.html.
-
-* Jaldhar M. Vyas: https://www.braincells.com/perl/2019/07/perl_weekly_challenge_week_15.htms. As of this reading (Aug. 2019), Jaldhar's post has a small Unicode rendering problem in a sentence on ironically the Unicode subject:  "(By the way, I love how you can use unicode symbols as syntax in Perl6. But if your editor can't cope, you can use * instead of âˆž.)" Jaldhar is speaking about the `∞` infinity symbol. This being said, note that the ∞ symbol  is rendered correctly in his code samples on Github, it is only in the blog post that there is a problem.
+* Jaldhar M. Vyas: https://www.braincells.com/perl/2019/07/perl_weekly_challenge_week_15.html. As of this reading (Aug. 2019), Jaldhar's post has a small Unicode rendering problem in a sentence on ironically the Unicode subject:  "(By the way, I love how you can use unicode symbols as syntax in Perl6. But if your editor can't cope, you can use * instead of âˆž.)" Jaldhar is speaking about the `∞` infinity symbol. The same problem occurs in the relevant code sample of the blog post. This being said, note that the ∞ symbol  is rendered correctly in his code samples on Github, it is only in the blog post that there is a problem. 
 
 
 ## Wrapping up
