@@ -5,8 +5,8 @@ I have created this series of blog posts to provide a review of the various Perl
 These posts are in part derived from the [blog posts](http://blogs.perl.org/users/laurent_r/) I wrote (with both Perl 5 and Perl 6 solutions) on the challenges. So, in order to reuse part of the material, I'll first describe my own solution or solutions and then review solutions written by others, as well as provide links to other blog posts. 
 
 At this point, the following posts are available:
-* [LZW Compression Algorithm](./Compression-algorithm) (PWC # 22);
-* [Sexy Prime Pairs](./Sexy-prime-pairs.md) (PWC # 22);
+* [LZW Compression Algorithm](./Compression-algorithm.md) (PWC # 22);
+* [Sexy Prime Pairs](./Sexy-primes-pairs.md) (PWC # 22);
 * [Euler's number](./Euler-number.md) (PWC # 21);
 * [URL Normalization](./URL-normalization.md) (PWC 21);
 * [Splitting Strings on Character Change](./Splitting-strings.md) (PWC # 20);
@@ -16,7 +16,7 @@ At this point, the following posts are available:
 * [Longest substring](./Longest-substring.md) (PWC # 18);
 * [Priority queues](./Priority-queues.md) (PWC # 18);
 * [Parsing URLs](Parsing-URL.md) (PWC # 17);
-* [Pythagoras Pie](./Pytagoras-pie.md) (PWC # 16);
+* [Pythagoras Pie](./Pytagoras-Pie.md) (PWC # 16);
 * [Strong and Weak Prime Numbers](./Strong-and-weak-primes.md) (PWC # 15);
 * [Vigenère Cypher](./Vigenere-cypher.md) (PWC # 15).
 

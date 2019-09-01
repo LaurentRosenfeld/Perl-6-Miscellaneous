@@ -97,13 +97,15 @@ Yet does not say how he knew he could stop his range at 55. His second solution 
 
 ## See Also
 
-Three blog posts this time:
+Four blog posts this time:
 
 Arne Sommer: https://perl6.eu/prime-lzw.html. Arne adds some bonuses: sexy prime triplets, sexy prime quadruplets, and even one sexy prime quintuplet.
 
 Mark Senn: https://engineering.purdue.edu/~mark/pwc-022-1.pdf
 
 Jaldar H. Vyas: https://www.braincells.com/perl/2019/08/perl_weekly_challenge_week_22.html
+
+Yet Ebreo: http://blogs.perl.org/users/yet_ebreo/2019/08/perl-weekly-challenge-w022.html
 
 
 ## Wrapping up
