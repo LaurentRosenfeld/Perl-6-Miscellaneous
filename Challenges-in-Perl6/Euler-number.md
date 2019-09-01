@@ -190,11 +190,15 @@ and computed it for the first 50 steps (which yields 2.7182818284590455).
 
 ## See Also
 
-Not many blog posts this week:
+Blog posts on Euler's number
 
 * Arne Sommer: https://perl6.eu/eulers-url.html
+
 * Adam Russell: https://adamcrussell.livejournal.com/6924.html
+
 * Roger Bell West: https://blog.firedrake.org/archive/2019/08/Perl_Weekly_Challenge_21.html
+
+* Damian Conway: http://blogs.perl.org/users/damian_conway/2019/09/to-compute-a-constant-of-calculusa-treatise-on-multiple-ways.html. Damian's blog post on Euler's number is more insanely awesome than usual. Reading it is an absolute must.
 
 ## Wrapping up
 
