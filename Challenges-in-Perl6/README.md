@@ -17,7 +17,8 @@ At this point, the following posts are available:
 * [Priority queues](./Priority-queues.md) (PWC # 18);
 * [Parsing URLs](Parsing-URL.md) (PWC # 17);
 * [Pythagoras Pie](./Pytagoras-pie.md) (PWC # 16);
-* [Strong and Weak Prime Numbers](./Strong-and-weak-primes.md) (PWC # 15).
+* [Strong and Weak Prime Numbers](./Strong-and-weak-primes.md) (PWC # 15);
+* [Vigenère Cypher](./Vigenere-cypher.md) (PWC # 15).
 
 I'll try to review solutions for past challenges, as time permits, but only those which are (IMHO) the most interesting ones.
 
