@@ -20,7 +20,10 @@ At this point, the following posts are available:
 * [Parsing URLs](Parsing-URL.md) (PWC # 17);
 * [Pythagoras Pie](./Pytagoras-Pie.md) (PWC # 16);
 * [Strong and Weak Prime Numbers](./Strong-and-weak-primes.md) (PWC # 15);
-* [Vigenère Cypher](./Vigenere-cypher.md) (PWC # 15).
+* [Vigenère Cypher](./Vigenere-cypher.md) (PWC # 15);
+* [Mutually Recursive Subroutines](./Mutually-recursive-subroutines.md) (PWC # 13);
+* [Euclid Numbers](./Euclid-numbers.md) (PWC # 12);
+* [Roman Numerals](./Roman-numerals.md) (PWC # 10).
 
 I'll try to review solutions for past challenges, as time permits, but only those which are (IMHO) the most interesting ones.
 

@@ -327,11 +327,11 @@ for @values -> $pair {
     }
 }
 ```
-Simon's `from-roman` subroutine looks quite long and complicated at first view because it handles a number of Unicode symbols, but it is in fact quite simple. The subroutine uses a regex with longest alternations to split the Roman numeral into pieces of one or two letters and then uses a hash with essentially the same content as the `@values` array of pairs above to convert to Arabic numbers.  Removing the Unicode part, Simon's subroutine main code can be boiled down to this quite concise and clever loop:
+Simon's `from-roman` subroutine looks quite long and complicated at first view because it handles a number of Unicode symbols, but it is in fact quite simple. The subroutine uses a regex with longest alternations to split the Roman numeral into pieces of one or two letters and then uses a `%roman-map` hash with essentially the same content as the `@values` array of pairs above to convert to Arabic numbers.  Removing the Unicode part, Simon's subroutine main code can be boiled down to this quite concise and clever loop:
 
 ``` Perl6
 my $out = 0;
-while my $match = $roman ~~ s/ ^M | CM | D | CD | C | XC | L | XL | X | IX | V | IV | I // {
+while my $match = $roman ~~ s/ M | CM | D | CD | C | XC | L | XL | X | IX | V | IV | I // {
     $out += %roman-map{$match};
 } 
 ```
@@ -355,9 +355,3 @@ Please let me know if I forgot any of the challengers or if you think my explana
 
 If you want to participate to the Perl Weekly Challenge, please connect to [this site](https://perlweeklychallenge.org/).
 
-
-```
-
-
-
-```
