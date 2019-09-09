@@ -241,6 +241,8 @@ while @digits
 ```
 Arne's [blog post](https://perl6.eu/roman.html) has very interesting additional considerations on how to add methods to the `Int` type for processing with Roman numerals, adding specific `base` methods and dealing with Roman Unicode symbols. Really worth reading.
 
+[Daniel Mita](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-010/daniel-mita/perl6/ch-1.p6) wrote a full-fledged [RomanNumeral](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-010/daniel-mita/perl6/RomanNumerals.pm6) module, including one role and three exception classes. There are lots of very interesting ideas in this module, and I learned a few things from reading Daniel's code, but it is a bit too complex and long to be detailed here. Follow the link, you might learn quite a few things as well reading it.
+
 [Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-010/feng-chang/perl6/ch-1.p6) also has two multi `MAIN` subroutines to figure out which conversion to perform. Feng's code to convert from Roman to Arabic is quite concise:
 
 ``` Perl6
