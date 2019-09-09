@@ -221,7 +221,7 @@ The algorithm itself is rather simple. It takes as its inputs *n*, the integer t
 
 This algorithm may fail to find a nontrivial factor even when *n* is composite. In that case, the method can be tried again, using a starting value other than 2 or a different *g(x)*. 
 
-Stephen Schultze's implementation of John Pollard's rho (or *ρ*) algorithm looks like this:
+Stephen Schulze's implementation of John Pollard's rho (or *ρ*) algorithm looks like this:
 
 ``` Perl6
 use v6;
