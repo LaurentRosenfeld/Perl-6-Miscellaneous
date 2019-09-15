@@ -35,7 +35,7 @@ Coming back to the program above, note that we don't really need to populate an 
 
 But it probably wouldn't make much sense to also try to get rid of the `@primes` array, because we are in fact using it many times in the process of computing Euclid's numbers, so it is probably better to cache the primes.
 
-When there is a backslash before the operator within a reduction metaoperator, Perl 6 generates all the intermediate results. This is an example under the REPL:
+Perl 6 has something called the *triangular reduction operator*: when there is a backslash before the operator within a reduction metaoperator, Perl 6 generates all the partial intermediate results. This is an example under the REPL:
 
     > say [+] 1..4;
     10
@@ -62,7 +62,7 @@ With all this in mind, we can now find the first Euclid number that is not prime
 ``` Perl6
 say ([\*] grep {.is-prime}, 1..*).map({$_ + 1}).first(not *.is-prime);
 ```
-which duly prints 30031. 
+which duly prints 30031.
 
 At this point, we can even solve the challenge with just a simple Perl 6 one-liner:
 
@@ -193,7 +193,7 @@ for 1..100 -> $i {
 }
 ```
 
-[Ruben Westerberg](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-012/ruben-westerberg/perl6/ch-1.p6) built successively three infinite lists: one of prime numbers, one of primorials (using the same `[\*]` operator as I did in my last solution), and  one of Euclid numbers. His program finally loops over the infinite array of Euclid numbers, exits the loop when the current number is not prime, and prints its value out with a `LAST` phaser.
+[Ruben Westerberg](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-012/ruben-westerberg/perl6/ch-1.p6) built successively three infinite lists: one of prime numbers, one of primorials (using the same `[\*]` triangular reduction operator as I did in my last solution), and one of Euclid numbers. His program finally loops over the infinite array of Euclid numbers, exits the loop when the current number is not prime, and prints its value out with a `LAST` phaser.
 
 ``` Perl6
 my @p=(0..*).grep: *.is-prime;
@@ -225,15 +225,70 @@ my @non-prime-euclid = @euclid.grep( ! *.is-prime );
 say @non-prime-euclid[0];
 ```
 
+## Enter Damian Conway
+
+In his blog post [Coding with an even fuller toolset](http://blogs.perl.org/users/damian_conway/2019/06/coding-with-an-even-fuller-toolset.html), Damian Conway introduces the same triangular reduction operator that Ruben Westerberg and I used in our solutions, except that Damian probably explains it better than I did (follow the link and read it). 
+
+This leads Damian to a solution like this:
+
+``` Perl6
+say first !*.is-prime,    # Print the first non-prime from
+    map   *+1,            # all numbers one greater than
+    [\*]                  # the cumulative products of
+    grep  &is-prime,      # all the prime numbers
+          2..Inf;         # from 2 to infinity
+```
+
+But if that solution, with that `[\*]` sandwiched in the middle of the statement, looks too scary, Damian suggest it can be hidden away in a subroutine:
+
+``` Perl6
+sub partial-products-of  { [\*] @^list }
+```
+
+which makes it possible to write:
+
+``` Perl6
+say first !*.is-prime,    # Print the first non-prime from
+    map   *+1,            # all numbers one greater than
+    partial-products-of   # the cumulative products of
+    grep  &is-prime,      # all the prime numbers
+          2..Inf;         # from 2 to infinity
+```
+
+If that is still too arcane, Damian shows that this whole shebang could be refactored into plain English:
+
+``` Perl6
+sub successor-of         { @^list.map(*+1) }
+sub the-primes           { (2..Inf).grep(&is-prime) }
+sub first-non-prime      { @^list.first(!*.is-prime) }
+```
+
+leading to the following statement:
+``` Perl6
+say first-non-prime successor-of partial-products-of the-primes;
+```
+
+Damian comments that code doesn't get much more declarative or self-documenting than that, unless we also define Euclid numbers as follows:
+
+``` Perl6
+sub Euclid-number {successor-of partial-products-of the-primes}
+```
+
+In which case, the entire solution is now just the original description of our problem:
+
+``` Perl6
+say first-non-prime Euclid-number;
+```
+
+
 ## See Also
 
-Three blog posts on Euclid's numbers:
+Four blog posts on Euclid's numbers:
 
 * Arne Sommer: https://perl6.eu/euclid-path.html.
-
 * Joelle Maslak: https://digitalbarbedwire.com/2019/06/16/perl-weekly-challenge-12-euclid-numbers/.
-
 * Mark Senn: https://engineering.purdue.edu/~mark/pwc-012.pdf.
+* Damian Conway:  http://blogs.perl.org/users/damian_conway/2019/06/coding-with-an-even-fuller-toolset.html.
 
 
 ## Wrapping up
