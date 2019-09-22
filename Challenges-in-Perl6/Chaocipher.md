@@ -223,7 +223,7 @@ Only two blog posts this time:
 
 Arne Sommer: https://perl6.eu/pokemon-chiao.html
 
-Yet Ebro: http://blogs.perl.org/users/yet_ebreo/2019/09/perl-weekly-challenge-w025---pokemon-nameschaocipher.html
+Yet Ebreo: http://blogs.perl.org/users/yet_ebreo/2019/09/perl-weekly-challenge-w025---pokemon-nameschaocipher.html
 
 ## Wrapping up
 
