@@ -221,7 +221,7 @@ And, as it turns out, Simon's use of lazy infinite lists is also an entirely del
 
 [Athanasius](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-013/athanasius/perl6/ch-2.p6) used the `Sub::Memoized` module to speed up execution. His solution otherwise uses two mutually recursive subroutines, `F` and `M`. Reading this nice solution, you probably wouldn't guess that Athanasius is a Perl 6 novice (which I know only because he admits it in his blog post).
 
-[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-013/jaldhar-h-vyas/perl6/ch-2.p6) managed the recursion base cases by writing two multi versions of the `female` and `male` subroutines. His solution is quite similar to my second (multi subs) solution above.
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-013/jaldhar-h-vyas/perl6/ch-2.p6) managed the recursion base cases by writing two multi versions of the `female` and `male` subroutines. His solution is quite similar to my second (multi subs) solution above.
 
 [Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-013/joelle-maslak/perl6/ch-2.p6) obviously planned to use the Perl 6 built-in caching feature, as she used the `experimental :cached` pragma that I used in my last solution. But then she wrote the following comment in her code: "can't use the cached trait (because it's a multi?)". So it appears that the `cached` trait apparently can't be used with multi subs. And it seems that I was lucky when I tested my program with the `cached` trait: by chance, I did not try it with a multi sub version, but with my original non multi version. Anyway, because of that, Joelle implemented a manual cache using a hash (`%c`). Her (non base case) `F` and `M` subroutines are really very concise and yet well written and very easy to understand:
 
@@ -248,7 +248,7 @@ Four blog posts on the female and male Hofstadter sequences:
 
 * Athanasius: http://blogs.perl.org/users/athanasius/2019/06/perl-weekly-challenge-013.html. One of the amazing things I learned from Athanasius's blog is that "*F(n)* is not equal to *M(n)* if and only if `n+1` is a Fibonacci number." 
 
-* Jaldhar M. Vyas: https://www.braincells.com/perl/2019/06/perl_weekly_challenge_week_13.html
+* Jaldhar H. Vyas: https://www.braincells.com/perl/2019/06/perl_weekly_challenge_week_13.html
 
 * Simon Proctor: http://www.khanate.co.uk/blog/2019/06/19/perl-weekly-challenge-13/
 

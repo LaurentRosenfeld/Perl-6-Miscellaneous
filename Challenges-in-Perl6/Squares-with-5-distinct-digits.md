@@ -139,7 +139,7 @@ say first map ^∞: *²: *.comb.Set ≥ 5;
 (^∞).map(* ** 2).grep(*.comb.Bag.elems >= $digits)[0].put;
 ```
 
-[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-009/jaldhar-h-vyas/perl6/ch-1.p6) looped over integers larger than or equal to 100 and used a hash to remove duplicates:
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-009/jaldhar-h-vyas/perl6/ch-1.p6) looped over integers larger than or equal to 100 and used a hash to remove duplicates:
 
 ``` Perl6
 sub MAIN() {

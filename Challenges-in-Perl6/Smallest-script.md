@@ -61,7 +61,7 @@ but with no executable code in it.
 
     perl6 -e"say $*VM"
 
-[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-024/jaldhar-h-vyas/perl6/ch-1.sh) wrote another one liner displaying information about the Perl 6 version being used:
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-024/jaldhar-h-vyas/perl6/ch-1.sh) wrote another one liner displaying information about the Perl 6 version being used:
 
     perl6 -V
 

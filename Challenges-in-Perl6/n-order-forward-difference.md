@@ -187,7 +187,7 @@ This computes the first order forward difference series. Arne's program then jus
 
 The outer loop calls the code above the number of times needed for the degree received as a parameter. Athanasius's code is often very thorough. For this challenge, he has quite detailed code for checking the arguments, and even wrote code for providing the proper English suffixes to ordinal numbers: "th", "st", "nd" or "rd," depending on the last digit in the number.
 
-[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-023/jaldhar-h-vyas/perl6/ch-1.p6) used a `for` loop and a `map` to build a very concise and yet very easy to follow solution:
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-023/jaldhar-h-vyas/perl6/ch-1.p6) used a `for` loop and a `map` to build a very concise and yet very easy to follow solution:
 
 ``` Perl6
 for 0 ..^ $n {
@@ -251,7 +251,7 @@ Five blog posts on the forward difference series, quite a good score:
 
 * Arne Sommer: https://perl6.eu/forward-prime.html
 
-* Jaldhar M. Vyas: https://www.braincells.com/perl/2019/09/perl_weekly_challenge_week_23.html
+* Jaldhar H. Vyas: https://www.braincells.com/perl/2019/09/perl_weekly_challenge_week_23.html
 
 * Roger Bell West: https://blog.firedrake.org/archive/2019/08/Perl_Weekly_Challenge_23.html
 

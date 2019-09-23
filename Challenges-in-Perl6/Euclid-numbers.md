@@ -24,7 +24,7 @@ say @euclids.first(not *.is-prime);
 
 which prints 30031 (which is not prime as it is the product 59 × 509). 30031 is the sixth Euclid  number and is equal to ( 2 ×  3 ×  5 × 7 × 11 × 13) + 1.
 
-It could be argued that this method is somewhat inefficient because are doing the same multiplications again and again, where we could keep the running product of the first *n* primes. For example, we could use a loop in which we compute the next primorial by multiplying the previous primorial by the next prime number, thus making only one multiplication at each step. Yes, it would probably be more efficient, but the computation with the program above is so fast that I will not bother trying to optimize the performance. See Feng Chang's and Jaldhar M. Vyas's solutions below for some implementations using this method. Joelle Maslak's solution is also keeping the running product of primes, not in a loop, but with a `map`. 
+It could be argued that this method is somewhat inefficient because are doing the same multiplications again and again, where we could keep the running product of the first *n* primes. For example, we could use a loop in which we compute the next primorial by multiplying the previous primorial by the next prime number, thus making only one multiplication at each step. Yes, it would probably be more efficient, but the computation with the program above is so fast that I will not bother trying to optimize the performance. See Feng Chang's and Jaldhar H. Vyas's solutions below for some implementations using this method. Joelle Maslak's solution is also keeping the running product of primes, not in a loop, but with a `map`. 
 
 Coming back to the program above, note that we don't really need to populate an intermediate temporary array with Euclid's numbers and can find directly the first such number that is not prime:
 
@@ -114,7 +114,7 @@ for 0 .. ∞ -> Int $i {
 ```
 Note the use of a `LAST` phaser to print the result right before exiting the loop. This is a bit cleaner and clearer than what I sometimes tend to do in such cases: `say $prod + 1 and last unless ...`, to avoid creating a new conditional block.
 
-[Jaldhar M. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-012/jaldhar-h-vyas/perl6/ch-1.p6) apparently did not know at the time of the challenge that Perl 6 has a built-in (very fast) `is-prime` function, as he implemented his own `isPrime` subroutine. Or perhaps he simply wanted to solve that himself as part of the challenge. Otherwise, he also implemented `for` loop computing each primorial from the previous one:
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-012/jaldhar-h-vyas/perl6/ch-1.p6) apparently did not know at the time of the challenge that Perl 6 has a built-in (very fast) `is-prime` function, as he implemented his own `isPrime` subroutine. Or perhaps he simply wanted to solve that himself as part of the challenge. Otherwise, he also implemented `for` loop computing each primorial from the previous one:
 
 ``` Perl6
 my $primorial = 1;
