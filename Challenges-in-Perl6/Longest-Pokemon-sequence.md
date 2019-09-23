@@ -123,13 +123,21 @@ a `%pairs` hash of arrays mapping the first and last letter of words to the corr
 
 [Yet Embreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-025/yet-ebreo/perl6/ch-1.p6) suggested successively several solutions with an `iter` recursive subroutine. A solution similar in spirit to mine led to an execution time of 5 minutes. Using multithreading brought that duration to about 3 minutes. He then tried a further optimization (going backward, starting with names with no successors) which brought the duration to less than 1 minute. However, as already discussed above, while his performance optimization happened to give a correct result for our input data set, there can be input data sets for which it wouldn't work correctly and would miss the longest sequence.
 
+[Jaldhar H. Vyas](https://github.com/jaldhar/perlweeklychallenge-club/blob/master/challenge-025/jaldhar-h-vyas/perl6/ch-1.p6) had a very busy week and provided his solution too late for the official Sunday deadline, but he nonetheless provided a complete contribution. His program first uses the `graph` subroutine to construct a `%graph` hash of arrays mapping words to possible successors. Then, its `traverse` recursive subroutine looks for the longest sequence of names in pretty much the same way as most solutions above, including mine. In his blog post, Jaldhar reports that his program runs in more than one hour. I suspect that this code line;
+
+``` Perl6
+if @path.grep(none /$neighbor/) { # ...
+```
+
+is probably what crucifies the performance, but I don't have time now to verify that. I think that using a hash or a set to record the names already in the current sequence (what I do in my `$seen` set) might improve significantly the performance.
+
 ## See Also
 
-Only two blog posts this time:
+Only three blog posts this time:
 
 * Arne Sommer: https://perl6.eu/pokemon-chiao.html
-
 * Yet Ebreo: http://blogs.perl.org/users/yet_ebreo/2019/09/perl-weekly-challenge-w025---pokemon-nameschaocipher.html
+* Jaldhar H. Vyas:  https://www.braincells.com/perl/2019/09/perl_weekly_challenge_week_25.html.
 
 
 ## Wrapping up
