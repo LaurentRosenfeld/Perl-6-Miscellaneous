@@ -204,7 +204,7 @@ sub chaochiper(@alpha1,@alpha2,  $c, :$decode=False){
 }
 ```
 
-[Yet Ebreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-025/yet-ebreo/perl6/ch-2.p6) also used "bigger wheels" (larger alphabets with upper case and lower case letters). He also used arrays for the alphabets (so it turns out that I'm the only challenger who used strings throughout the whole process). His `rot`subroutine to perform alphabet substitutions is very compact:
+[Yet Ebreo](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-025/yet-ebreo/perl6/ch-2.p6) also used "bigger wheels" (larger alphabets with upper case and lower case letters). He also used arrays for the alphabets (so it turns out that I'm the only challenger who used strings throughout the whole process). His `rot` subroutine to perform alphabet substitutions is very compact:
 
 ``` Perl6
 sub rot ($rcount, @arr, $from?, $to?) {
@@ -217,13 +217,17 @@ sub rot ($rcount, @arr, $from?, $to?) {
 }
 ```
 
+[Yaldhar H. Vyas](https://github.com/jaldhar/perlweeklychallenge-club/blob/master/challenge-025/jaldhar-h-vyas/perl6/ch-2.p6) had a very busy week and provided his solution too late for the official Sunday deadline, but he nonetheless provided a complete (both Perl 5 and Perl 6) contribution. His program uses strings for the alphabet when enciphering or deciphering texts (using the `index` built-in function, as I did), but it uses arrays for the alphabet permutations. Jaldhar's program uses two multi MAIN subroutines to take care of enciphering or deciphering cases. Multi subroutines are a very nice and clean feature of Perl 6, but I'm sometimes worried that they can also lead to some code repetition, which goes against the DRY (don't repeat yourself) tenet.
+
 ## See Also
 
-Only two blog posts this time:
+Only three blog posts this time:
 
 Arne Sommer: https://perl6.eu/pokemon-chiao.html
 
 Yet Ebreo: http://blogs.perl.org/users/yet_ebreo/2019/09/perl-weekly-challenge-w025---pokemon-nameschaocipher.html
+
+Jaldhar H. Vyas: https://www.braincells.com/perl/2019/09/perl_weekly_challenge_week_25.html
 
 ## Wrapping up
 
