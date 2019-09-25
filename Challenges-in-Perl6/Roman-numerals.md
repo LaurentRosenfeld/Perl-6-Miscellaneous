@@ -340,9 +340,11 @@ while my $match = $roman ~~ s/ M | CM | D | CD | C | XC | L | XL | X | IX | V | 
 
 ## See Also
 
-Three blog posts this time:
+Four blog posts this time:
 
 * Arne Sommer: https://perl6.eu/roman.html
+
+* Daniel Mita: https://medium.com/@mdango/fun-with-perl-6-using-roman-numerals-1133bc160239
 
 * Francis J. Whittle: https://rage.powered.ninja/2019/06/02/obiective-romanos-grammaticam.html
 
