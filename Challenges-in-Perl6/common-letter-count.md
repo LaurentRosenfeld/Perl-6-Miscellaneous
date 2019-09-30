@@ -37,7 +37,7 @@ This week, we are welcoming two new members, Donald Hunter and Markus Holzer, wh
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/arne-sommer/perl6/ch-1.p6) used a subset `AtoZ` of strings to enforce strings with only ASCII lower case and upper case letters. The code doing the work is very concise and holds in just one code line:
 
 ``` Perl6
-say ($alphabet.comb.Set (.) $string.comb.Bag).Int;
+say ($alphabet.comb.Set ⊍ $string.comb.Bag).Int;
 ```
 
 [Donald Hunter](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/donald-hunter/perl6/ch-1.p6) used a `collect` subroutine to return a `Bag` of letters for each input string. Then, computing the count of common letters is one code line:
@@ -52,7 +52,7 @@ Donald also suggest a one-liner in his [blog post](http://donaldh.wtf/2019/09/st
 [+] 'chancellor'.comb(/<[A..Z a..z]>/).Bag{'chocolate'.comb(/<[A..Z a..z]>/).Bag.keys}
 ```
 
-[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/mark-senn/perl6/ch-1.p6) provided not less than four possible solutions: array-based, cross-product-based, hash-based and set-based. Let me illustrate with the cross-product-based solution, which is quite original:
+[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/mark-senn/perl6/ch-1.p6) provided not less than four possible solutions: array-based, cross-product-based, hash-based and set-based. Let me illustrate with the cross-product-based solution, which is, IMHO, quite original:
 
 ``` Perl6
 $count = 0;
@@ -80,11 +80,15 @@ multi sub infix:<\<∈>( Iterable $stones, Iterable $jewels ) returns Seq
 }
 ```
 
+Note that, thanks to the `multi`mechanism, the program is able to use the previously defined `<∈` operator between an iterable and a set within the definition of the same operator between two iterables.
+
 And, it finally extends is again to work on two strings. After these definitions, the code to find common letters is incredibly simple:
 
 ``` Perl6
 say "chancellor" <∈ "chocolates" ).chars;
 ```
+
+Truly a beautiful use of Perl 6 expressive power.
 
 [Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/noud/perl6/ch-1.p6) created a `count_abc` subroutine to do the work:
 
@@ -126,7 +130,7 @@ for $stones.split('').grep( { $ALPHA } ) -> Str $letter
     }
 ```
 
-Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/jaldhar-h-vyas/perl6/ch-1.sh) provided a Perl 6 one-liner:
+[Jaldhar H. Vyas](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/jaldhar-h-vyas/perl6/ch-1.sh) provided a Perl 6 one-liner:
 
     perl6 -e 'my @a = @*ARGS[0].comb ∩ @*ARGS[1].comb; @*ARGS[1].comb.grep({$_ ∈  @a.any }).elems.say;' chancellor chocolate
 
@@ -139,7 +143,7 @@ sub MAIN(Str:D $stones, Str:D $jewels) {
     say $matches.elems;
 }
 ```
-[Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/roger-bell-west/perl6/ch-1.p6) used a hash to record the letters of the first string, and then updated a counter to account for letters of the second sting found in the aforesaid hash.
+[Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/roger-bell-west/perl6/ch-1.p6) used a hash to record the letters of the first string, and then updated a counter to account for letters of the second string found in the aforesaid hash.
 
 [Ruben Westerberg](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/ruben-westerberg/perl6/ch-1.p6) used a somewhat unexpected methodology to find the letters:
 
