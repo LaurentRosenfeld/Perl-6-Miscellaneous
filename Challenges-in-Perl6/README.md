@@ -5,6 +5,7 @@ I have created this series of blog posts to provide a review of the various Perl
 These posts are in part derived from the [blog posts](http://blogs.perl.org/users/laurent_r/) I wrote (with both Perl 5 and Perl 6 solutions) on the challenges. So, in order to reuse part of the material, I'll first describe my own solution or solutions and then review solutions written by others, as well as provide links to other blog posts. 
 
 At this point, the following posts are available:
+* [Common Letter Count](./common-letter-count.md) (PWC # 26);
 * [Longest Pokémon Sequences](./Longest-Pokemon-sequence.md) (PWC # 25);
 * [Implementation of the Chaocipher Algorithm](./Chaocipher.md) (PWC # 25);
 * [Inverted Index](./Inverted-index.md) (PWC # 24);
