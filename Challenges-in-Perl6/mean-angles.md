@@ -8,9 +8,9 @@ The challenge reads as follows:
 
 In mathematics, a mean of circular quantities is a mean which is sometimes better-suited for quantities like angles, daytimes, and fractional parts of real numbers. This is necessary since most of the usual means may not be appropriate on circular quantities. For example, the arithmetic mean of 0° and 360° is 180°, which is misleading because for most purposes 360° is the same thing as 0°.
 
-A common formula (provided by the Wikipedia article) for the mean of a list of angles is:
+A common formula for the mean of a list of angles is:
 
-​		$\bar{\alpha} = \operatorname{atan2}\left(\frac{1}{n}\sum_{j=1}^n \sin\alpha_j, \frac{1}{n}\sum_{j=1}^n \cos\alpha_j\right)$
+![alt text](./Figures/angle-mean.jpg)
 
 We just need to apply the formula, after having converted the input values from degrees to radians.
 
@@ -72,11 +72,7 @@ As you can see, the program computes 19.999999999999996, where I expect 20, whic
 
 In some cases, we may end up with a negative value for the mean angle. In this case, we may want to convert it to a positive value by adding 360° to it, but it did not seem to me that it is really necessary. It probably depends on what you want to do with the mean angle value afterward.
 
-When I posted my original blog post with the code above, *Saif* rightly commented that we don't really need to divide both arguments of the `atan2` built-in function by the number of angles. These arguments represent the abscissa and the ordinate of a point in the plan. Whether the two Cartesian coordinates are divided by `count` or not does not change the resulting polar angle calculated by the `atan2` function with the sums of sines and cosines.  In other words, the Wikipedia formula above could actually be simplified to:
-
-​		$\bar{\alpha} = \operatorname{atan2}\left(\sum_{j=1}^n \sin\alpha_j, \sum_{j=1}^n \cos\alpha_j\right)$
-
-Concretely, we don't need to perform this division and we don't even need the `$count` variable. The `mean` subroutine can be simplified as follows:
+When I posted my original blog post with the code above, *Saif* commented that we don't really need to divide both arguments of the `atan2` built-in function by the number of angles. These arguments represent the abscissa and the ordinate of a point in the plan. Whether the two Cartesian coordinates are divided by `count` or not does not change the resulting polar angle calculated by the `atan2` function with the sums of sines and cosines. Thus, we don't need to perform this division and we don't even need the `$count` variable. The `mean` subroutine can be simplified as follows:
 
 ``` Perl6
 sub mean (*@degrees) {
@@ -256,7 +252,7 @@ for @angles -> $angle {
 }
 ```
 
-Her program then computes the arctangent (one-argument `atan` built-in function) of the sums of sines divided by the sum of cosines and converts the obtained radian value back to degrees. Finally, the program adds 180 to the degree value if the sums of sines and cosines are of opposite signs, and adds 360 degrees if they are both negative.
+Her program then computes the arctangent (one-argument `atan`) of the sums of sines divided by the sum of cosines and converts the obtained radian value back to degrees. Finally, the program adds 180 to the degree value if the sums of sines and cosines are of opposite signs, and adds 360 degrees if they are both negative.
 
 [Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/roger-bell-west/perl6/ch-2.p6) used a `for` loop similar to Joelle's to compute the sums of sins and cosines and then computed the arctangent (two-argument `atan2`) of the sums of sines divided by the sum of cosines and converted the obtained radian value back to degrees.
 
