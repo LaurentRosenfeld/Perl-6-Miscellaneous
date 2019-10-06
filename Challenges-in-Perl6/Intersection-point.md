@@ -462,9 +462,11 @@ put "Intercept point: $x, $y";
 
 ## See Also
 
-Only one blog post this time (in addition to mine):
+Only two blog posts this time (in addition to mine):
 
 * Arne Sommer: https://perl6.eu/historical-intersection.html;
+
+* Roger Bell West: https://blog.firedrake.org/archive/2019/09/Perl_Weekly_Challenge_27.html.
 
 
 ## Wrapping up
