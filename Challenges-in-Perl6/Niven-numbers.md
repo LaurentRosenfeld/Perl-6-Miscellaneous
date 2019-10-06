@@ -59,7 +59,9 @@ use v6;
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-007/arne-sommer/perl6/ch-1.p6) provided a script that could have been a Perl 6 one-liner and is significantly more concise than my own one-liner:
 
+``` Perl6
 .say if $_ %% $_.comb.sum for 0 .. 50;
+```
 
 Arne also provided a solution creating a lazy infinite list of Niven numbers and printing out those up to 50:
 
@@ -74,6 +76,7 @@ my $niven := gather
 }
 .say for $niven[^$limit];
 ```
+
 This program is sort of slightly wrong, though, as it does not print the Niven numbers up to 50, as required in the challenge specification, but the first 50 Niven numbers (up to 153). But Arne knows that, and  that's really secondary: it would be no big deal to change the last code line to make it satisfy the requirement.
 
 [Finley](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-007/finley/perl6/ch-1.p6) provided a script, but the real code to compute Niven's number holds in one single line, even slightly shorter than Arne's solution:
@@ -161,9 +164,7 @@ Jo-Christian Oterhals: https://medium.com/@jcoterhals/perl-6-small-stuff-19-a-ch
 
 ## Wrapping up
 
-Please let me know if I forgot any of the challengers or if you think my explanation of your code misses something important (you can just file an issue against this GitHub page).
+Please let me know if I forgot any of the challengers or if you think my explanation of your code misses something important (you can just raise an issue against this GitHub page).
 
 If you want to participate to the Perl Weekly Challenge, please connect to [this site](https://perlweeklychallenge.org/).
-
-
 
