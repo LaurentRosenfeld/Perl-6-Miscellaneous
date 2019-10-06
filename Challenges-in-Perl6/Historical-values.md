@@ -61,7 +61,7 @@ I do not know how to avoid or suppress these warnings (it seems that the `no war
 
 ## Alternate solutions
 
-All challengers except Noud and Yet Ebreo used objects of the built-in [Proxy](https://docs.perl6.org/type/Proxy) class, which I did not know about before. According to the P6 documentation, a proxy is an object that allows you to set a hook that executes whenever a value is retrieved from a container (`FETCH`) or when it is set (`STORE`). This is quite obviously the right tool for solving the task at hand. This is the example provided in the official Perl 6 documentation to create a container that returns twice what was stored in it:
+All challengers except Noud and Yet Ebreo used objects of the built-in [Proxy](https://docs.perl6.org/type/Proxy) class, which I did not know about before. According to the Perl 6 documentation, a proxy is an object that allows you to set a hook that executes whenever a value is retrieved from a container (`FETCH`) or when it is set (`STORE`). This is quite obviously the right tool for solving the task at hand. This is the example provided in the official Perl 6 documentation to create a container that returns twice what was stored in it:
 
 ``` Perl6
 sub double() is rw {
@@ -73,11 +73,11 @@ sub double() is rw {
  }
  my $doubled := double();
  $doubled = 4;
- say $doubled;       # OUTPUT: «8␤»
- ```
- 
+ say $doubled;       # OUTPUT: «8
+»
+```
 
-[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-027/arne-sommer/perl6/ch-2.p6)'s program defines a`%hist` hash to store values according to their timestamp, and then defines the `memoryvariable` subroutine creating and returning `Proxy` object:
+[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-027/arne-sommer/perl6/ch-2.p6)'s program defines a`%hist` hash to store values according to their time stamp, and then defines the `memoryvariable` subroutine creating and returning `Proxy` object:
 
 ``` Perl6
 sub memoryvariable($label) is rw
@@ -136,7 +136,7 @@ $x -= 5;
 
 thanks to the fact that it uses the [Scalar::History](https://github.com/holli-holzer/perl6-Scalar-History) module, which he wrote and is still in development stage (it should presumably go to CPAN some time in the future when completed). This module also uses `Proxy` objects.
 
-[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-027/simon-proctor/perl6/ch-2.p6) implemented a `Historic` class with a `@!values` attibute, implementing various setters and getters and using `Proxy` objects. One very interesting point is that he also implemented a `Δ=` operator to handle `Historic` objects:
+[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-027/simon-proctor/perl6/ch-2.p6) implemented a `Historic` class with a `@!values` attribute, implementing various setters and getters and using `Proxy` objects. One very interesting point is that he also implemented a `Δ=` operator to handle `Historic` objects:
 
 ``` Perl6
 multi sub infix:<Δ=> ( Any:U $h is rw, Any $v ) is equiv(&infix:<=>) {
