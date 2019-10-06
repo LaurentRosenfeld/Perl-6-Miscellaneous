@@ -320,6 +320,7 @@ sub intersection( Int \x1, Int \y1, Int \x2, Int \y2, Int \x3, Int \y3, Int \x4,
 ```
 
 [Noud](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-027/noud/perl6/ch-1.p6) has the following very relevant comment:
+
     # Computational geometry is always difficult, because there are so many border
     # cases you have to take into account. I hope I covered all of them.
 
