@@ -34,7 +34,8 @@ At this point, the following posts are available:
 * [Roman Numerals](./Roman-numerals.md) (PWC # 10);
 * [Squares with Five Distinct Digits](./Squares-with-5-distinct-digits.md) (PWC # 9);
 * [Perfect Numbers](./Perfect-numbers.md) (PWC # 8);
-* [Niven (or Harshad) Numbers](./Niven-numbers.md) (PWC # 7).
+* [Niven (or Harshad) Numbers](./Niven-numbers.md) (PWC # 7);
+* [Compact Number Ranges](./Compact-number-ranges.md) (PWC # 6).
 
 I'll try to review solutions for past challenges, as time permits, but only those which are (IMHO) the most interesting ones.
 
