@@ -189,7 +189,7 @@ sub mean_angle3(@angles) {
 }
 ```
 
-[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/ozzy/perl6/ch-2.p6) defined a `deg2rad` and a `rad2deg` *constants* to be multiplied by the input value to perform conversions. His program then uses the `[+]` reduction operator to compute the sum of sines and cosines.
+[Ozzy](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-026/ozzy/perl6/ch-2.p6) defined a `deg2rad` and a `rad2deg` *constants* to be multiplied by the input value to perform conversions. His program then uses the `[+]` reduction operator to compute the sum of sines and cosines.
 
 ``` Perl6
 sub MAIN (*@ang_deg where .elems > 0) {
