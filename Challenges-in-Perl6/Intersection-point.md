@@ -461,13 +461,39 @@ my $y=@l[0]<m>*$x+@l[0]<c>;
 put "Intercept point: $x, $y";
 ```
 
+[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards.
+
+``` Perl6
+sub MAIN($x1, $y1, $x2, $y2, $x3, $y3, $x4, $y4) {
+
+    my $denominator = ((($x2 - $x1) * ($y4 - $y3)) - (($x4 - $x3) * ($y2 - $y1);
+
+    if ($denominator == 0) {
+        say 'Lines do not intersect or intersect at multiple points.';
+        return;
+    }
+
+    my $x = ((($x2 * $y1) - ($x1 * $y2)) * ($x4 - $x3)) -
+        ((($x4 * $y3) - ($x3 * $y4)) * ($x2 - $x1)) /
+        $denominator;
+
+    my $y = ((($x2 * $y1) - ($x1 * $y2)) * ($y4 - $y3)) -
+        ((($x4 * $y3) - ($x3 * $y4)) * ($y2 - $y1)) /
+        $denominator;
+
+    say "($x,$y)";
+}
+```
+
 ## See Also
 
-Only two blog posts this time (in addition to mine):
+Three blog posts this time:
 
 * Arne Sommer: https://perl6.eu/historical-intersection.html;
 
-* Roger Bell West: https://blog.firedrake.org/archive/2019/09/Perl_Weekly_Challenge_27.html.
+* Roger Bell West: https://blog.firedrake.org/archive/2019/09/Perl_Weekly_Challenge_27.html;
+
+* Jaldhar H. Vyas: https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html.
 
 
 ## Wrapping up
