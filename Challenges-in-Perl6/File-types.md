@@ -275,11 +275,39 @@ sub data() {
 }
 ```
 
+[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards. His program reads the beginning of the file  and attempts to convert it to UTF-8 in a `try` block. If that fails, it is likely that the file is binary. Jaldhar notes in his blog post that this is not 100% foolproof, but that's OK for me: as we have noted above, none of the solutions to this problem is 100% reliable, as we can use only a probnabilistic heuristics.
+
+```Perl6
+sub isText(IO::Path $file) {
+    my Buf $firstBlock;
+
+    given $file.open {
+        $firstBlock = .read;
+        .close;
+    }
+
+    try {
+        $firstBlock.decode('utf-8');
+        CATCH {
+            return False;
+        }
+    }
+
+    return True;
+}
+
+sub MAIN( Str $arg) {
+    say 'The file content is ', isText($arg.IO) ?? 'text.' !! 'binary.';
+}
+```
+
 ## See Also
 
-Only one blog post (besides mine) this time, as far as I can say from Mohammad's recap and from the GitHub repository:
+Only two blog posts (besides mine) this time, as far as I can say from Mohammad's recap and from the GitHub repository:
 
-Arne Sommer: https://perl6.eu/binary-clock.html.
+Arne Sommer: https://perl6.eu/binary-clock.html;
+
+Jaldhar H. Vyas: https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html.
 
 ## Wrapping up
 
