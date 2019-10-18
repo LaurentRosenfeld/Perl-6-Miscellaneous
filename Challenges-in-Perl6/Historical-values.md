@@ -258,11 +258,42 @@ x*= sqrt 3;
 
 The code of the `hist` class seems very simple, but is in fact pretty clever. I must admit that I don't fully grasp it: I don't really understand what the `handles` trait does in such context, and I am also not quite sure how this (re)definition of the `STORE` subroutine is supposed to work. If any reader wants to explain this, I would be very happy to update this blog post accordingly.
 
+[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards. Just like several other challengers, he used the `Proxy` datatype and implemented a `FETCH` and a `STORE` method  
+
+``` Perl6
+my @history;
+
+sub historical($value) is rw {
+    my $storage = $value;
+    @history.push("Storing <$value> (was [])");
+
+    Proxy.new(
+        FETCH => method () {
+            return $storage;
+        },
+
+        STORE => method ($new) {
+            @history.push("Storing <$new> (was [$storage])");
+            $storage = $new;
+        },
+    )
+}
+
+my $x := historical(10);
+$x = 20;
+$x -= 5;
+
+@history.join("\n").say;
+```
+
+
 ## See Also
 
-Only one blog post this time (in addition to mine):
+Only two blog posts this time (in addition to mine):
 
 * Arne Sommer: https://perl6.eu/historical-intersection.html;
+
+* Jaldhar H. Vyas: https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html.
 
 ## Wrapping up
 
