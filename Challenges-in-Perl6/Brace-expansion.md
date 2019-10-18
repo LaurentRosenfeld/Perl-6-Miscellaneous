@@ -290,13 +290,34 @@ sub expand ($string) {
 ```
 To me, the code tends to be clearer without these comments, but that may just be me, YMMV.
 
+[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_week_29.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards. He wrote an `expand` subroutine that first captures the data between braces, then splits ths captured string and use a `map` to build the various output strings: 
+
+
+``` Perl6
+sub expand(Str $string) {
+    $string ~~ / \{(.+)\} /;
+
+    return $0.split(/\,\s*/).map({
+        my $word = $_;
+        (my $expansion = $string) ~~ s/\{.+\}/$word/;
+        $expansion;
+    });
+}
+
+sub MAIN(Str $string) {
+    .say for expand($string);
+}
+```
+
 ## See Also
 
-Only two blog posts (besides mine) this time:
+Three blog posts this time:
 
 Arne Sommer: https://perl6.eu/bracen-c.html;
 
 Yet Ebrao: https://doomtrain14.github.io/pwc/2019/10/13/pwc_brace_expansion.html. Yet's blog post really relates to his Perl 5 implementation of the challenge, but it still does shed some light on his Perl 6 implementation.
+
+Jaldhar H. Vyas: https://www.braincells.com/perl/2019/10/perl_weekly_challenge_week_29.html.
 
 ## Wrapping up
 
