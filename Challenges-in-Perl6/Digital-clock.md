@@ -66,7 +66,7 @@ Example of displayed time:
 
 Quite a few of the solutions below used system-specific features that did not work for me, despite trying them under Windows, Linux and Cygwin. The fact that I wasn't able to run a solution doesn't mean that it is a bad solution
 
-[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/arne-sommer/perl6/ch-2.p6) also used ASCII art to display a digital clock, but his digits are much more elaborated than mine:
+[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/arne-sommer/perl6/ch-2.p6) also used ASCII art to display a digital clock, but his digits are much mor elaborated than mine:
 
 
        ,a8888a,         88           88  888888888888               ,d8        88  
@@ -215,7 +215,7 @@ signal(SIGINT).tap({ put "\r{ DateTime.now.hh-mm-ss }  "; exit 0; });
 sleep ∞;
 ```
 
-[Joelle M%aslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/joelle-maslak/perl6/ch-2.p6) used a solution similar to one of my one-liners:
+[Joelle M%aslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/joelle-maslak/perl6/ch-2.p6) USED A SOLUTION SIMILAR TO ONE OF MY ONE6LINERS/
 
 ``` Perl6
 sub MAIN() {
@@ -290,12 +290,31 @@ which produces output like so:
      222222  333333      444444  00  00      333333  00  00
      22          33  ::      44  00  00  ::      33  00  00
      222222  333333          44   0000       333333   0000
+ 
+[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards. His program uses a supply (a data type implementing a thread-safe, asynchronous data streamsed for multithreading anda thread-safe, asynchronous data streama thread-safe, asynchronous data streama thread-safe, asynchronous data stream used for concurrent programming) that fires every one second interval. At that point it is "tapped" by calling the tick() subroutine which prints the correct time. 
+
+``` Perl6
+sub tick() {
+    my $now = DateTime.now;
+    print "\b" x 8,
+        sprintf("%02d:%02d:%02d", $now.hour, $now.minute , $now.second);
+}
+
+my $supply = Supply.interval(1);
+
+$supply.tap( -> $v { tick; } );
+
+tick();
+sleep;
+```
 
 ## See Also
 
-Only one blog post (besides mine) this time, as far as I can say from Mohammad's recap and from the GitHub repository:
+Only two blog posts (besides mine) this time, as far as I can say from Mohammad's recap and from the GitHub repository:
 
-Arne Sommer: https://perl6.eu/binary-clock.html.
+Arne Sommer: https://perl6.eu/binary-clock.html;
+
+Jaldhar H. Vyas:https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html.
 
 ## Wrapping up
 
