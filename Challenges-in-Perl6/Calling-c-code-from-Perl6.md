@@ -42,14 +42,16 @@ int add (int a, int b) {
 
 and a simple Perl 6 script calling it:
 
-    use NativeCall;
+``` Perl6
+use NativeCall;
      
-    sub add(int32, int32)
-        returns int32
-        is native('./calc.dll')
-        { * }
-     
-    say add(3, 4);
+sub add(int32, int32)
+    returns int32
+    is native('./calc.dll')
+    { * }
+
+say add(3, 4);
+```
 
 Note that the Perl 6 script uses Perl 6 [native types](https://docs.perl6.org/language/nativetypes) (such as `int32`) for the variables passed to the C function.
 
