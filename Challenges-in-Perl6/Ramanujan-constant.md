@@ -23,7 +23,7 @@ What has become known as the Ramanujan Constant in the recent period is a number
 
 This number is the following one:
 
-![Ramanujan's Constant](./figures/Ramanujan_3.gif)
+![](./figures/Ramanujan_3.gif)
 
 As you can see, there are twelve 9 digits after the decimal point, so that this number, which is built from a formula involving exponentials on one algebraic and two transcendental numbers, almost looks like an integer (when rounded to less than 12 digits after the decimal point). 
 
@@ -33,7 +33,7 @@ The reason why it has become known as Ramanujan’s constant is that, in 1975, "
 
 The [Wikipedia page on Ramanujan's constant](https://en.wikipedia.org/wiki/Heegner_number#Almost_integers_and_Ramanujan's_constant) and the formula given earlier in this post show that the integer part of this constant is equal to `640_320 ** 3 + 744` (i.e. 262537412640768744). The Wikipedia article further explains that the difference between this number and Ramanujan's constant is given by:
 
-![](.\Figures\Ramanujan_4.gif)
+![](./Figures/Ramanujan_4.gif)
 
 So we just need to apply this approximate formula. Let's do it under the Rakudo REPL:
 
