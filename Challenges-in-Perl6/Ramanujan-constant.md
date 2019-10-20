@@ -23,7 +23,7 @@ What has become known as the Ramanujan Constant in the recent period is a number
 
 This number is the following one:
 
-![](./figures/Ramanujan_3.gif)
+![](./Figures/Ramanujan_3.gif)
 
 As you can see, there are twelve 9 digits after the decimal point, so that this number, which is built from a formula involving exponentials on one algebraic and two transcendental numbers, almost looks like an integer (when rounded to less than 12 digits after the decimal point). 
 
