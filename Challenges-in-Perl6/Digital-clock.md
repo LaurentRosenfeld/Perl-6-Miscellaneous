@@ -8,7 +8,7 @@ The challenge reads as follows:
 
 ## My Solutions
 
-We can use a Perl6 one-liner:
+We can use a Perl 6 one-liner:
 
     $ perl6 -e 'loop { my $d = DateTime.now; printf "\r%02d:%02d:%02d", $d.hour, $d.minute, $d.second; sleep 1;'
     14:35:06
@@ -20,8 +20,9 @@ This can actually be made simpler:
     $ ./perl6 -e 'loop {print "\r", DateTime.now.hh-mm-ss;}'
     14:38:06
 
+So, job done? Yes, sure, we're displaying a digital clock. But the task specification suggests to feel free to be creative when displaying the digits. So, let's try to get a nicer output. We could probably use some graphical library such as `Tk`, but I haven't used it for a fairly long time and I'm also not sure how to use it in Perl 6. We could also possibly use an HTML display, but I fear that would require to run a Web server, and I don't want to run into annoying environment problems. 
 
-So, job done? Yes, sure, we're displaying a digital clock. But the task specification suggests to feel free to be creative when displaying the digits. So, let's try to get a nicer output. We could probably use some graphical library such as `Tk`, but I haven't used it for a fairly long time and I'm also not sure how to use it in Perl 6. We could also possibly use an HTML display, but I fear that would require to run a Web server, and I don't want to run into annoying environment problems. So I decided to simply display the time with ASCII art.
+So I decided to use ASCII art to implement a [seven-segment display](https://en.wikipedia.org/wiki/Seven-segment_display) device:
 
 ``` Perl6
 use v6;
@@ -66,7 +67,7 @@ Example of displayed time:
 
 Quite a few of the solutions below used system-specific features that did not work for me, despite trying them under Windows, Linux and Cygwin. The fact that I wasn't able to run a solution doesn't mean that it is a bad solution
 
-[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/arne-sommer/perl6/ch-2.p6) also used ASCII art to display a digital clock, but his digits are much mor elaborated than mine:
+[Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/arne-sommer/perl6/ch-2.p6) also used ASCII art to display a digital clock, but his digits are much more elaborated than mine:
 
 
        ,a8888a,         88           88  888888888888               ,d8        88  
@@ -215,7 +216,7 @@ signal(SIGINT).tap({ put "\r{ DateTime.now.hh-mm-ss }  "; exit 0; });
 sleep ∞;
 ```
 
-[Joelle M%aslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/joelle-maslak/perl6/ch-2.p6) USED A SOLUTION SIMILAR TO ONE OF MY ONE6LINERS/
+[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-028/joelle-maslak/perl6/ch-2.p6) used a solution similar to one of my one-liners:
 
 ``` Perl6
 sub MAIN() {
@@ -290,8 +291,8 @@ which produces output like so:
      222222  333333      444444  00  00      333333  00  00
      22          33  ::      44  00  00  ::      33  00  00
      222222  333333          44   0000       333333   0000
- 
-[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards. His program uses a supply (a data type implementing a thread-safe, asynchronous data streamsed for multithreading anda thread-safe, asynchronous data streama thread-safe, asynchronous data streama thread-safe, asynchronous data stream used for concurrent programming) that fires every one second interval. At that point it is "tapped" by calling the tick() subroutine which prints the correct time. 
+
+[Jaldhar H. Vyas](https://www.braincells.com/perl/2019/10/perl_weekly_challenge_weeks_27-28.html) was away in a location with poor Internet access and therefore unable to complete the challenge in time. He nonetheless completed the challenge afterwards. His program uses a supply (a data type implementing a thread-safe, asynchronous data streams used for concurrent programming) that fires every one second interval. At that point it is "tapped" by calling the tick() subroutine which prints the correct time. 
 
 ``` Perl6
 sub tick() {
