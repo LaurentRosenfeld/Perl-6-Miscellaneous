@@ -39,9 +39,10 @@ At this point, the following posts are available:
 * [Squares with Five Distinct Digits](./Squares-with-5-distinct-digits.md) (PWC # 9);
 * [Perfect Numbers](./Perfect-numbers.md) (PWC # 8);
 * [Niven (or Harshad) Numbers](./Niven-numbers.md) (PWC # 7);
-* [Compact Number Ranges](./Compact-number-ranges.md) (PWC # 6).
+* [Compact Number Ranges](./Compact-number-ranges.md) (PWC # 6);
+* [Ramanujan's Constant](./Ramanujan-constant.md) (PWC # 6).
 
-I'll try to review solutions for past challenges, as time permits, but only those which are (IMHO) the most interesting ones.
+I've been reviewing solutions for past challenges and will try to continue to do so, as time permits, but giving priority to those which are (IMHO) the most interesting ones.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
