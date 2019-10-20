@@ -48,7 +48,7 @@ Note that we are a bit lucky: the value obtained for `$r-constant` has an accura
 
 ## Alternative Solutions
 
-Only five challengers contributed to this challenge.
+Only five challengers contributed to this challenge (in addition to me).
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-006/arne-sommer/perl6/ch-2.p6) suggested the following program:
 
@@ -148,7 +148,7 @@ put substr($r, 0, 33);
 
 ## See also
 
-As far as I can say, there was only one blog post on this (in addition to mine):
+As far as I can say, there was only one blog post on Ramanujan's constant (in addition to mine):
 
 * Arne Sommer: https://perl6.eu/int-erval.html
 
