@@ -40,7 +40,8 @@ At this point, the following posts are available:
 * [Perfect Numbers](./Perfect-numbers.md) (PWC # 8);
 * [Niven (or Harshad) Numbers](./Niven-numbers.md) (PWC # 7);
 * [Compact Number Ranges](./Compact-number-ranges.md) (PWC # 6);
-* [Ramanujan's Constant](./Ramanujan-constant.md) (PWC # 6).
+* [Ramanujan's Constant](./Ramanujan-constant.md) (PWC # 6);
+* [Five-smooth or Hamming Numbers](./Five-smooth-numbers.md) (PWC # 3).
 
 I've been reviewing solutions for past challenges and will try to continue to do so, as time permits, but giving priority to those which are (IMHO) the most interesting ones.
 
