@@ -4,6 +4,7 @@
 This is derived in part from my [blog post](http://blogs.perl.org/users/laurent_r/2019/04/perl-weekly-challenge-week-3.html) made in answer to the [Week 03 of the Perl Weekly Challenge](https://perlweeklychallenge.org/blog/perl-weekly-challenge-003/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a> as well as answers made by others to the same challenge.
 
 The challenge reads as follows:
+
 *Create a script to generate 5-smooth numbers, whose prime divisors are less or equal to 5. They are also called Hamming/Regular/Ugly numbers. For more information, please check this [wikipedia](https://en.wikipedia.org/wiki/Regular_number) page.*
 
 Regular or 5-smooth numbers (or Hamming numbers, or ugly numbers) are numbers whose prime divisors are only 2, 3, and 5, so that they evenly divide some powers of 30.
@@ -409,13 +410,13 @@ I initially wondered, though, why Simon does the chained `.unique.sort` method i
 
 Four blog posts on this subject:
 
-Arno Sommer: https://perl6.eu/regular-pascal.html;
+* Arno Sommer: https://perl6.eu/regular-pascal.html;
 
-Francis J. Whittle: https://rage.powered.ninja/2019/04/12/hamming-it-up-in-perl-6-weekly.html;
+* Francis J. Whittle: https://rage.powered.ninja/2019/04/12/hamming-it-up-in-perl-6-weekly.html;
 
-Mark Senn: https://engineering.purdue.edu/~mark/perl-weekly-challenge/003/t.pdf;
+* Mark Senn: https://engineering.purdue.edu/~mark/perl-weekly-challenge/003/t.pdf;
 
-Simon Proctor: http://www.khanate.co.uk/blog/2019/04/09/perl-weekly-week-3/.
+* Simon Proctor: http://www.khanate.co.uk/blog/2019/04/09/perl-weekly-week-3/.
 
 ## Wrapping up
 
