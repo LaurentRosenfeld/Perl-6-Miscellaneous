@@ -199,11 +199,11 @@ for 2019..2100 -> $year {
 
 Only three blog posts this time (in addition to mine):
 
-Arne Sommer: https://perl6.eu/xmas-12.html;
+* Arne Sommer: https://perl6.eu/xmas-12.html;
 
-Roger Bell West: https://blog.firedrake.org/archive/2019/10/Perl_Weekly_Challenge_30.html;
+* Roger Bell West: https://blog.firedrake.org/archive/2019/10/Perl_Weekly_Challenge_30.html;
 
-Jaldhar H. Vyas: https://www.braincells.com/perl/2019/10/perl_weekly_challenge_week_30.html.
+* Jaldhar H. Vyas: https://www.braincells.com/perl/2019/10/perl_weekly_challenge_week_30.html.
 
 ## Wrapping up
 
