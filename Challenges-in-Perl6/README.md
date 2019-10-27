@@ -5,6 +5,7 @@ I have created this series of blog posts to provide a review of the various Perl
 These posts are in part derived from the [blog posts](http://blogs.perl.org/users/laurent_r/) I wrote (with both Perl 5 and Perl 6 solutions) on the challenges. So, in order to reuse part of the material, I'll first describe my own solution or solutions and then review solutions written by others, as well as provide links to other blog posts. 
 
 At this point, the following posts are available:
+* [Christmas on Sunday](./Christmas-on-sunday.md) (PWC # 30);
 * [Calling C code from Perl 6](./Calling-c-code-from-Perl6.md) (PWC # 29);
 * [Brace Expansion](./Brace-expansion.md) (PWC # 29);
 * [Digital Clock](./Digital-clock.md) (PWC # 28);
