@@ -38,9 +38,9 @@ We could also do it in the form of a Perl 6 one-liner:
     $ perl6 -e 'say grep {Date.new($_, 12, 25).day-of-week == 7}, 2019..2100;'
     (2022 2033 2039 2044 2050 2061 2067 2072 2078 2089 2095)
 
- ## Alternate Solutions
+ ## Alternative Solutions
 
- I did not keep track of the number of contributions, but it seems to me that, with 15 solutions, this might be the most successful challenge so far in Perl 6. This may have to do with the fact that the core Perl 6 has all built-in methods to easily solve the task.
+ I did not keep track of the number of contributions for past challenges, but it seems to me that, with 15 solutions, this might be the most successful challenge so far in Perl 6. This may have to do with the fact that the core Perl 6 has all built-in methods to easily solve the task.
 
  [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-030/arne-sommer/perl6/ch-1.p6) suggested a solution quite similar to mine:
 
