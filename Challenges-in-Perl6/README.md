@@ -35,6 +35,7 @@ At this point, the following posts are available:
 * [Pythagoras Pie](./Pytagoras-Pie.md) (PWC # 16);
 * [Strong and Weak Prime Numbers](./Strong-and-weak-primes.md) (PWC # 15);
 * [Vigenère Cypher](./Vigenere-cypher.md) (PWC # 15);
+* [Van Eck Sequence](./Van-eck-sequence.md) (PWC # 14);
 * [Mutually Recursive Subroutines](./Mutually-recursive-subroutines.md) (PWC # 13);
 * [Euclid Numbers](./Euclid-numbers.md) (PWC # 12);
 * [Roman Numerals](./Roman-numerals.md) (PWC # 10);
