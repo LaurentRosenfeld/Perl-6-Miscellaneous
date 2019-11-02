@@ -9,7 +9,7 @@ The challenge reads as follows:
 
 ## My Solution
 
-Perl 6 has very rich [error handling features](https://docs.perl6.org/language/exceptions), most notably the [Exception class](https://docs.perl6.org/type/Exception). Without going into all the lengthy details, let us say that it's possible to handle exceptional circumstances by supplying a `CATCH` block. To solve the challenge can be as simple as this:
+Perl 6/Raku has very rich [error handling features](https://docs.perl6.org/language/exceptions), most notably the [Exception class](https://docs.perl6.org/type/Exception). Without going into all the lengthy details, let us say that it's possible to handle exceptional circumstances by supplying a `CATCH` block. To solve the challenge can be as simple as this:
 
 ``` Perl6
 use v6;
