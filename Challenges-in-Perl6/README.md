@@ -1,8 +1,8 @@
-## Perl 6 Solutions to the Perl Weekly Challenge
+## Perl 6/Raku Solutions to the Perl Weekly Challenge
 
-I have created this series of blog posts to provide a review of the various Perl 6 solutions to the [Perl Weekly Challenge](https://perlweeklychallenge.org/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a>.
+I have created this series of blog posts to provide a review of the various Perl 6/Raku solutions to the [Perl Weekly Challenge](https://perlweeklychallenge.org/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a>.
 
-These posts are in part derived from the [blog posts](http://blogs.perl.org/users/laurent_r/) I wrote (with both Perl 5 and Perl 6 solutions) on the challenges. So, in order to reuse part of the material, I'll first describe my own solution or solutions and then review solutions written by others, as well as provide links to other blog posts. 
+These posts are in part derived from the [blog posts](http://blogs.perl.org/users/laurent_r/) I wrote (with both Perl 5 and Perl 6 /Raku solutions) on the challenges. So, in order to reuse part of the material, I'll first describe my own solution or solutions and then review solutions written by others, as well as provide links to other blog posts. 
 
 At this point, the following posts are available:
 * [Dynamic Variable Name](./Dynamic-variable-name.md) (PWC # 31);
