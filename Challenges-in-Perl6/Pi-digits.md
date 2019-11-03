@@ -32,7 +32,7 @@ my @denominators = 1, 3, 3, -> $a, $b {| ($a + 2, $b + 2) } ... *;
 my $pi = 2 * ([*] @numerators[0..2000]) / ([*] @denominators[0..2000]);
 ```
 
-The value obtained for $pi is:
+The value obtained for `$pi` is:
 
     3.14237736509388
 
