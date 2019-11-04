@@ -342,9 +342,9 @@ sub div_zero_check ($n, $d) {
 
 ## See Also
 
-Three blog posts this time:
+Four blog posts this time:
 
-* Adam Russell: https://adamcrussell.livejournal.com/10620.html
+* Adam Russell: https://adamcrussell.livejournal.com/10620.html;
 
 * Arne Sommer: https://raku-musings.com/dynamic-zero.html;
 
