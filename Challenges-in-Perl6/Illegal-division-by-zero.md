@@ -96,6 +96,8 @@ try {
     }  
 }
 
+Note also that Adam Russell also suggested a solution in C++.
+
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-031/arne-sommer/perl6/ch-1.p6) used a `try` [statement prefix](https://docs.perl6.org/language/statement-prefixes#index-entry-try_(statement_prefix)-try) to catch any error in the division. 
 
 ``` Perl6
@@ -341,6 +343,8 @@ sub div_zero_check ($n, $d) {
 ## See Also
 
 Three blog posts this time:
+
+* Adam Russell: https://adamcrussell.livejournal.com/10620.html
 
 * Arne Sommer: https://raku-musings.com/dynamic-zero.html;
 
