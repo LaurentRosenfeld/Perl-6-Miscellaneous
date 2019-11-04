@@ -83,6 +83,19 @@ which outputs the following:
 
 ## Alternative Solutions
 
+[Adam Russell](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-031/adam-russell/perl6/ch-1.p6) has been participating to the challenge in Perl 5 since the very beginning, but is participating to the challenge in Perl 6 / Raku for the first time (if I'm not wrong). His solution uses a `try` block with an embedded `CATCH` block:
+
+try {
+    my $x = 9;
+    my $y = 0;
+    say $x / $y;
+    CATCH {
+        default {
+            say "caught an error: " ~ .^name; 
+        } 
+    }  
+}
+
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-031/arne-sommer/perl6/ch-1.p6) used a `try` [statement prefix](https://docs.perl6.org/language/statement-prefixes#index-entry-try_(statement_prefix)-try) to catch any error in the division. 
 
 ``` Perl6
