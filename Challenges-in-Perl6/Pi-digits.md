@@ -424,7 +424,7 @@ say substr($pi, 0, $size);
 Mark acknowledges in his blog post that he was prompted to use this formula by my question on [perl6-users](https://www.nntp.perl.org/group/perl.perl6.users/2019/04/msg6664.html) and the answers provided by Fernando Santagata and Brian Duggan. 
 
 
-[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-004/simon-proctor/perl6/ch-1.p6) created a `///` operator to transform simple division into `FatRat` assignment, thus avoiding the `Rat` falling to `Num` problem I reported at the beginning of this post. Otherwise, he used the same Plouffe formula as I did:
+[Simon Proctor](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-004/simon-proctor/perl6/ch-1.p6) created a `///` operator to transform simple division into `FatRat` constructor and assignment, thus avoiding the `Rat` falling to `Num` problem I reported at the beginning of this post. Otherwise, he used the same Plouffe formula as I did:
 
 ``` Perl6
 sub infix:<///> ( Int() $nu, Int() $de ) { FatRat.new( $nu, $de ) }
