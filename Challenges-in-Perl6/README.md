@@ -5,6 +5,8 @@ I have created this series of blog posts to provide a review of the various Perl
 These posts are in part derived from the [blog posts](http://blogs.perl.org/users/laurent_r/) I wrote (with both Perl 5 and Perl 6 /Raku solutions) on the challenges. So, in order to reuse part of the material, I'll first describe my own solution or solutions and then review solutions written by others, as well as provide links to other blog posts. 
 
 At this point, the following posts are available:
+
+* [Word-Histogram](./Word-histogram.md) (PWC # 32);
 * [Dynamic Variable Name](./Dynamic-variable-name.md) (PWC # 31);
 * [Illegal Division by Zero](./Illegal-division-by-zero.md) (PWC 31);
 * [Integer Triplets whose Sum is 12](./Number-triplets-whose-sum-is-12.md) (PWC 30);
