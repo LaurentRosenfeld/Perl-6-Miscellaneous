@@ -6,6 +6,7 @@ These posts are in part derived from the [blog posts](http://blogs.perl.org/user
 
 At this point, the following posts are available:
 
+* [ASCII Bar Chart](./ASCII-chart.md) (PWC # 32);
 * [Word-Histogram](./Word-histogram.md) (PWC # 32);
 * [Dynamic Variable Name](./Dynamic-variable-name.md) (PWC # 31);
 * [Illegal Division by Zero](./Illegal-division-by-zero.md) (PWC 31);
