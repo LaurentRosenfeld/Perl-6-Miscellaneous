@@ -43,7 +43,7 @@ This is not specified explicitly, but from the example, we gather that what is d
 
 ## My Solution
 
-When solving the same task in Perl 5 for the weekly challenge, we used a hash as an histogram, i.e. as a collection of counters. We could do the same in Raku (formerly known as Perl 6). In Raku, however, we can also use a `Bag`, named `$histo`, rather than a hash, to easily implement an histogram. With just a little bit of work, we're able to populate the bag in just one statement, without any explicit loop. Also, if a letter does not exist in the `$histo` bag, the bag will report 0, so that, contrary to the hash solution, we don't need any special code to avoid an `undefined` warning for such an edge case. All this makes the code much more concise than its Perl 5 counterpart.
+When solving the same task in Perl 5 for the weekly challenge, we used a hash as an histogram, i.e. as a collection of counters. We could do the same in Raku (formerly known as Perl 6). In Raku, however, we can also use a `Bag`, named `$histo`, rather than a hash, to easily implement an histogram. With just a little bit of work, we're able to populate the bag in just one statement, without any explicit loop (otherwise, we would have had to use a `BagHash` instead, since a `bag` is not mutable and therefore needs to be populated in one single step). Also, if a letter does not exist in the `$histo` bag, the bag will report 0, so that, contrary to the hash solution, we don't need any special code to avoid an `undefined` warning for such an edge case. All this makes the code much more concise than its Perl 5 counterpart.
 
 ``` Perl6
 use v6;
