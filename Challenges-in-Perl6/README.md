@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Formatted Multiplication Tables](./Formatted-multiplication-tables.md) (PWC # 33);
 * [Letter Count](./Letter-count.md) (PWC # 33);
 * [ASCII Bar Chart](./ASCII-chart.md) (PWC # 32);
 * [Word-Histogram](./Word-histogram.md) (PWC # 32);
