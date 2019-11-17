@@ -54,6 +54,7 @@ At this point, the following posts are available:
 * [Niven (or Harshad) Numbers](./Niven-numbers.md) (PWC # 7);
 * [Compact Number Ranges](./Compact-number-ranges.md) (PWC # 6);
 * [Ramanujan's Constant](./Ramanujan-constant.md) (PWC # 6);
+* [Anagrams-of-a-word.md](./Anagrams-of-a-word.md) (PWC # 5);
 * [Computing Pi Digits](./Pi-digits.md) (PWC # 4);
 * [Five-smooth or Hamming Numbers](./Five-smooth-numbers.md) (PWC # 3).
 
