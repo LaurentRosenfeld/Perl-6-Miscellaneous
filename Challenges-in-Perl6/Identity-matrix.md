@@ -120,7 +120,7 @@ say @im;
 
 Note the use of [shaped arrays](https://docs.perl6.org/language/list#Fixed_size_arrays) in Arne's solution above. Take the time to study Arne's [other solutions](https://github.com/manwar/perlweeklychallenge-club/tree/master/challenge-011/arne-sommer/perl6) or read his blog post (see below).
 
-[Fench Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-011/feng-chang/perl6/ch-2.p6) used the same strategy. His program populates a matrix with zeros and then overwrites the zeros of the first diagonal with ones:
+[Feng Chang](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-011/feng-chang/perl6/ch-2.p6) used the same strategy. His program populates a matrix with zeros and then overwrites the zeros of the first diagonal with ones:
 
 ``` Perl6
 sub MAIN(Int $n where * > 0) {
