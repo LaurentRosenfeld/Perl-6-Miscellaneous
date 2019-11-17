@@ -320,7 +320,7 @@ sub MAIN (*@filenames) {
 }
 ```
 
-[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-033/joelle-maslak/perl6/ch-1.p6) also used a hash for storing the counters, but the original side of her solution is that it is Unicode compliant and that it uses graphemes matching the `<alpha>` character class to define its letters:
+[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-033/joelle-maslak/perl6/ch-1.p6) also used a hash for storing the counters, but the innovative side of her solution is that it is Unicode compliant and that it uses graphemes matching the `<alpha>` character class to define its letters:
 
 ``` Perl6
 sub MAIN(+@filenames) {
