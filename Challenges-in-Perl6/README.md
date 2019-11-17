@@ -47,6 +47,7 @@ At this point, the following posts are available:
 * [Van Eck Sequence](./Van-eck-sequence.md) (PWC # 14);
 * [Mutually Recursive Subroutines](./Mutually-recursive-subroutines.md) (PWC # 13);
 * [Euclid Numbers](./Euclid-numbers.md) (PWC # 12);
+* [Displaying the Identity Matrix](./Identity-matrix.md) (PWC # 11);
 * [Roman Numerals](./Roman-numerals.md) (PWC # 10);
 * [Squares with Five Distinct Digits](./Squares-with-5-distinct-digits.md) (PWC # 9);
 * [Perfect Numbers](./Perfect-numbers.md) (PWC # 8);
