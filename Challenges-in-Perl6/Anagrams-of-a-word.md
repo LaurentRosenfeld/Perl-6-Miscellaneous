@@ -85,7 +85,7 @@ The `===` value identity operator used between two bags returns `True` if the ba
 
 ### Creating an Anagram Operator  
 
-Just a bit of fun: rather than creating an `is-anagram` subroutine, we could create the `ana` operator:
+Just a bit of fun: rather than creating an `is-anagram` subroutine, we could create the infix `ana` operator:
 
     sub infix:<ana> (Str $word1, Str $word2) {
         return $word1.comb.Bag === $word2.comb.Bag;
@@ -230,17 +230,18 @@ for @*ARGS ?? @*ARGS !! ! $*IN.t ?? lines() !! '' -> $w {
 }
 ```
 
-[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-005/joelle-maslak/perl6/ch-1.p6) used `Bag` to store the letters of the input word and analyze the dictionary words. 
+[Joelle Maslak](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-005/joelle-maslak/perl6/ch-1.p6) used `Bag`s to store the letters of the input word and analyze the dictionary words. 
 
+``` Perl6
 sub MAIN(Str:D $letters, Str:D $filename = '/usr/share/dict/words') {
     my $matchbag = Bag.new($letters.comb);
     my SetHash $dedupe = SetHash.new;  # To store matches we gave back
 
     for $filename.IO.lines -> $word {
         my $fcword = $word.fc;
-
+    
         my $bag = Bag.new($fcword.comb);
-
+    
         if $bag ~~ $matchbag {
             next if $fcword ∈ $dedupe;
             $dedupe{$fcword}++;
@@ -248,6 +249,7 @@ sub MAIN(Str:D $letters, Str:D $filename = '/usr/share/dict/words') {
         }
     }
 }
+```
 
 [Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-005/mark-senn/perl6/ch-1.p6) normalized words of the word list much in the same way as my original is-anagram solution (i.e. sorting the letters) and stored the result in a hash. He then used a hash 
 
@@ -276,6 +278,7 @@ print "\n";
 
 [Rob4t](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-005/rob4t/perl6/ch-1.p6) used `Bag`s to check for anagrams:
 
+``` Perl6
 sub MAIN(Str $word, Str $file where *.IO.r = '/usr/share/dict/words') {
     my $word_bag = $word.lc.comb.Bag;
 
@@ -286,9 +289,10 @@ sub MAIN(Str $word, Str $file where *.IO.r = '/usr/share/dict/words') {
         # look for words AND phrases
         .lc.words.map({.comb}).flat.Bag eqv $word_bag
     };
-
+    
     .say for @found_words;
 }
+```
 
 [Ruben Westerberg]() wrote an [anagram module](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-005/ruben-westerberg/perl6/anagram.pm6) implementing a `findAnangrams` (sic) subroutine:
 
@@ -340,7 +344,7 @@ my @letters=$input.trim.lc.split("")[1..*-2];
 say "Anagrams: ",findAnangrams(@letters,@word-list).join: ' ';
 ```
 
-This probably works well, but, although the idea of creating a module for anagrams is probably good, I have the feeling that this implkementation is a bit overengineered. My solution held in 7 code lines.
+This probably works well, but, although the idea of creating a module for anagrams is probably good, I have the feeling that this implementation is a bit over-engineered. My solution held in 7 code lines.
 
 [Simon Proctor]() also wrote an [Anagrams module](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-005/simon-proctor/perl6/lib/Anagrams.pm6):
 
@@ -384,7 +388,7 @@ multi sub MAIN (
     $dict.IO.words.grep( { is-anagram-of( $word, $_ ) } )>>.say;
 }
 ```
-Again, this seeems to be a bit overengineering to me.
+Again, this seems to be a bit over-engineering to me.
 
 ## See Also
 
