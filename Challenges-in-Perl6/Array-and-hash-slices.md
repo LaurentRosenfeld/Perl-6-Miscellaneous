@@ -56,7 +56,7 @@ This program produces the following output:
 
 ## Alternative Solutions
 
-Maybe it's me missing out something, but I'm a bit disappointed by several of the solutions, which is quite surprising for such a simple challenge. Several solutions just don't really fit the bill. And it seems I'm the only one who thought about using slices as l-values (.
+Maybe it's me missing out something, but I'm a bit disappointed by several of the solutions, which is quite surprising for such a simple challenge. Several solutions just don't really fit the bill. And it seems I'm the only one who thought about using slices as l-values.
 
 [Arne Sommer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-034/arne-sommer/perl6/ch-1.p6) provided a few nice examples of array slices, plus one example of a hash slice. Please run Arne's code to understand anything that isn't obvious to you.
 
