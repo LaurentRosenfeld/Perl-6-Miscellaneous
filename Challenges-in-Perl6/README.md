@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Dispatch Tables](./Dispatch-tables.md) (PWC # 34);
 * [Array and Hash Slices](./Array-and-hash-slices.md) (PWC # 34);
 * [Formatted Multiplication Tables](./Formatted-multiplication-tables.md) (PWC # 33);
 * [Letter Count](./Letter-count.md) (PWC # 33);
