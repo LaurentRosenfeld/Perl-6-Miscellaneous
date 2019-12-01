@@ -142,11 +142,11 @@ The `from_morse` subroutine will need a lookup table to convert Morse encoded "l
 - Split each word into "letters" (splitting on '000'), use the reverse look-up table to find the letter in our alphabet, and join the letters to reconstruct the original words;
 - And finally join the words into a string, with a space between the words.
 
-The input string can be passed as a parameter to the string or, failing that, will use a default string (whose only merit is that, while being relatively short, it contains all letters of the alphabet, so that it constitutes a relatively good test case).
+The input string can be passed as a parameter to the string or, failing that, will use a default string ("The quick brown fox jumps over the lazy dog", whose only merit is that, while being relatively short, it contains all letters of the alphabet, so that it constitutes a relatively good test case).
 
-Although this is not strictly necessary, we also format the encoded string with new lines inserted so that it can be nicely printed over 80 columns (but that subroutine is only for enabling pretty printing, it doesn't change the value of its argument).
+Although this is not strictly necessary, we also format the encoded string with new lines inserted so that it can be nicely printed over 80 columns (but that code is only for enabling pretty printing, it doesn't change the value of its argument).
 
-Since we're using both `to_morse` and `from_morse` subroutines, we can test a round trip: first encode the input string, and then decode the result, and check visually that the final result corresponds to the input (subject to non-alphabetical characters which may have been removed and to upper-case folding).
+Since we're using both `to_morse` and `from_morse` subroutines, we can test a round trip: first encode the input string, and then decode the result, and check visually that the final result corresponds to the input (subject to non-alphabetical characters that may have been removed and to upper-case folding).
 
     use v6;
     
@@ -208,7 +208,7 @@ And given a string passed as an argument to the script, we get the following out
 
 ## Alternative Solutions
 
-[Arne Sommers](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-035/arne-sommer/perl6/ch-1.p6) first created a [BinaryMorse2](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-035/arne-sommer/perl6/lib/BinaryMorse2.pm6) module providing a `%morse` letter-to-Morse translation table and a `%remorse` Morse-to-letter translation table (he used the built-in `antipair` function for creating the latter, which is probably better than the way I did it with `reverse` (because I copied it from my Perl 5 code without thinking too much about it). Arne's module also creates a lookup table mapping ASCII letters to binary-encoded Morse code and provides two subroutines, `morsify` (to turn plain test into binary encoded Morse code) and `demorsify` (to do the opposite), and it is probably more interesting to quote these, rather than the main code of his program:
+[Arne Sommers](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-035/arne-sommer/perl6/ch-1.p6) first created a [BinaryMorse2](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-035/arne-sommer/perl6/lib/BinaryMorse2.pm6) module providing a `%morse` letter-to-Morse translation table and a `%remorse` Morse-to-letter translation table (he used the built-in `antipair` function for creating the latter, which is probably better than the way I did it with `reverse`, because I copied it from my Perl 5 code without thinking too much about it). Arne's module also creates a lookup table mapping ASCII letters to binary-encoded Morse code and provides two subroutines, `morsify` (to turn plain test into binary encoded Morse code) and `demorsify` (to do the opposite), and it is probably more interesting to quote these, rather than the main code of his program:
 
 ``` Perl6
 my %binary-morse;
@@ -261,13 +261,7 @@ my constant %values = (
     :C(0b11101011101),   :D(0b1110101),
     :E(0b1),             :F(0b101011101),
     :G(0b111011101),     :H(0b1010101),
-    :I(0b101),           :J(0b1011101110111),
-    :K(0b111010111),     :L(0b101110101),
-    :M(0b1110111),       :N(0b11101),
-    :O(0b11101110111),   :P(0b10111011101),
-    :Q(0b1110111010111), :R(0b1011101),
-    :S(0b10101),         :T(0b111),
-    :U(0b1010111),       :V(0b101010111),
+    [... lines omitted for brevity ...]
     :W(0b101110111),     :X(0b11101010111),
     :Y(0b1110101110111), :Z(0b11101110101),
     1 => 0b10111011101110111,
@@ -344,7 +338,7 @@ my %morse =
     'I' =>  '••',
     'J' =>  '•−−−',
     'K' =>  '−•−',
-    [ ... Lines omitted for brevity ...]
+    [ ... Lines omitted for brevity ... ]
     '"' =>  '•−••−•',
     '@' =>  '•−−•−•',
     '=' =>  '−•••−',
@@ -380,7 +374,7 @@ sub filterMorseInput ($text) {
 }
 ```
 
-[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-035/mark-senn/perl6/ch-1.p6) constructed his translation table as follows (notice the spaces between dots and dashes that will be converted to intra-character gaps):
+[Mark Senn](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-035/mark-senn/perl6/ch-1.p6) constructed his translation table as follows (notice the spaces between dots and dashes that are later converted to intra-character gaps):
 
 ``` Perl6
 my %plain2cipher =
