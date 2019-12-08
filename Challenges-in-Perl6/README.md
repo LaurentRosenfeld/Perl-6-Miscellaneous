@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Knapsack Problem](./Knapsack-problem.md) (PWC # 35);
 * [Vehicle Identification Numbers (VIN)](./Vehicle_ID_numbers.md) (PWC # 35);
 * [Binary-Encoded Morse Code](./Binary-encoded-Morse.md) (PWC # 35, tasks 1 and 2);
 * [Dispatch Tables](./Dispatch-tables.md) (PWC # 34);
