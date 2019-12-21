@@ -1,4 +1,4 @@
-## Perl 6/Raku Solutions to the Perl Weekly Challenge
+## Raku Solutions to the Perl Weekly Challenge
 
 I have created this series of blog posts to provide a review of the various Raku (formerly known as Perl 6) solutions to the [Perl Weekly Challenge](https://perlweeklychallenge.org/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a>.
 
@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Week Days in Each Month](./Weekdays.md) (PWC # 37);
 * [Knapsack Problem](./Knapsack-problem.md) (PWC # 36);
 * [Vehicle Identification Numbers (VIN)](./Vehicle_ID_numbers.md) (PWC # 36);
 * [Binary-Encoded Morse Code](./Binary-encoded-Morse.md) (PWC # 35, tasks 1 and 2);
