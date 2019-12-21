@@ -154,7 +154,7 @@ for <Jan Feb Mar Apr May Jun
 }
 ```
 
-[Richard Nutall](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-037/rnuttall/perl6/ch-1.p6), who is new to the challenge if I am not wrong, wrote a nice data pipeline computing for each month the number of days in the month in a single chained-methods statement. Note the interesting use of the `strftime` function of the [DateTime::Format](https://github.com/supernovus/perl6-datetime-format/blob/master/lib/DateTime/Format.pm6) module to provide the month names.
+[Richard Nuttall](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-037/rnuttall/perl6/ch-1.p6), who is new to the challenge if I am not wrong, wrote a nice data pipeline computing for each month the number of days in the month in a single chained-methods statement. Note the interesting use of the `strftime` function of the [DateTime::Format](https://github.com/supernovus/perl6-datetime-format/blob/master/lib/DateTime/Format.pm6) module to provide the month names.
 
 ``` Perl6
 use v6;
