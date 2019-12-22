@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Date Finder](./Date-finder.md) (PWC # 38);
 * [Day Light Gain or Loss](./Day-light-gain-or-loss.md) (PWC # 37);
 * [Week Days in Each Month](./Weekdays.md) (PWC # 37);
 * [Knapsack Problem](./Knapsack-problem.md) (PWC # 36);
