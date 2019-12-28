@@ -143,7 +143,7 @@ my $time_on = 24 * 60 - $time_off;
 say "The light was on for $time_on minutes";
 ```
 
-[Ulrich Rielke](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-039/ulrich-rieke/perl6/ch-1.p6) explains his program with the following comment: “The basic idea is to read in the file, to convert the access( IN ) and the departure times to minutes and to add a tag whether we move in( "i" ) or out ("o"). If we then order the times by minutes we can keep a count of people inside and determine the number of minutes that elapsed between first person arriving and last person leaving.“ This is the main part of Ulrich's program:
+[Ulrich Rieke](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-039/ulrich-rieke/perl6/ch-1.p6) explains his program with the following comment: “The basic idea is to read in the file, to convert the access( IN ) and the departure times to minutes and to add a tag whether we move in( "i" ) or out ("o"). If we then order the times by minutes we can keep a count of people inside and determine the number of minutes that elapsed between first person arriving and last person leaving.“ This is the main part of Ulrich's program:
 
 ``` Perl 6
 my @times = readFile( $filename ) ;
