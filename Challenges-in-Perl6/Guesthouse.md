@@ -83,6 +83,29 @@ With the original input data set, the result was 111 seconds. With my modified d
 
 [Daniel Mita](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-039/daniel-mita/perl6/ch-1.p6) wrote a rather long program recording in the `%present` [SetHash](https://docs.raku.org/type/SetHash) the number of guests present for any minute between 9:00 and 11:00, and incrementing the `$light-duration` variable for any minute where there is at least one guest.
 
+[Fernando Correa de Olievera](https://perlweeklychallenge.org/blog/recap-challenge-039/) provided the following solution using massively `multi` functions::
+
+``` Perl 6
+sub to-min(Str $str) {
+    do given $str.comb(/\d+/) {
+       60*.[0] + .[1]
+    }
+}
+proto calc(Int $count,  Int $prev, @in,               @out --> Int) {*}
+multi calc(0,           Int,       [],                []   --> 0)   {}
+multi calc(Int,         Int,       [],                [])           { die "Finished with guest inside house" }
+multi calc(0,           Int $prev, [Int $in, *@in],   @out where $in <= *.head)        { calc 1, $in, @in, @out }
+multi calc(Int $count,  Int $prev, [Int $in, *@in],   @out where $in <= *.head)        { $in  - $prev + calc $count + 1, $in,  @in, @out }
+multi calc(Int $count,  Int $prev, @in (Int $in, *@), [Int $out where $in > *, *@out]) { $out - $prev + calc $count - 1, $out, @in, @out }
+multi calc(Int $count,  Int $prev, [],                [Int $out, *@out])               { $out - $prev + calc $count - 1, $out, [],  @out }
+
+my (@in, @out) := ([[],[]], |lines).reduce: -> (@in, @out), $_ {
+   my ($in, $out) = .comb(/\d+":"\d+/);
+   [ |@in, to-min $in, ], [ |@out, to-min $out ]
+}
+say calc 0, 0, @in.sort, @out.sort
+```
+
 [Kevin Colyer](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-039/kevin-colyer/perl6/ch-1.p6) also used a [SetHash](https://docs.raku.org/type/SetHash) to keep track of guests' presence for every minute in the interval between the arrival of the first guest and the departure of the last one. The number of items in the SetHash then represents the total number of minutes the light is on. Kevin's code is quite short:
 
 ``` Perl 6
