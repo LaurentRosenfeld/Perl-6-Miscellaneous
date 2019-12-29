@@ -9,7 +9,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 At this point, the following posts are available:
 
 * [Reverse Polish Notation](RPN-notation-calculation.md) (PWC # 39);
-* [Measuring the Time the Light is On in a Guestghouse](./Guesthouse.md) (PWC # 39);
+* [Measuring the Time the Light is On in a Guest House](./Guesthouse.md) (PWC # 39);
 * [Scrabble-Like Word Game](Scrabble-word-game.md) (PWC # 38);
 * [Date Finder](./Date-finder.md) (PWC # 38);
 * [Day Light Gain or Loss](./Day-light-gain-or-loss.md) (PWC # 37);
