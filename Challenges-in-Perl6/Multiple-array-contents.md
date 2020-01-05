@@ -197,6 +197,7 @@ sub MAIN(
 
 [Burkhard Nickels](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-040/burkhard-nickels/perl6/ch-1.p6) participated to the Raku challenge for the first time. His program is very short, but it only covers the simple input provided with the task (as my first solution at the beginning of this post), but not cases where the input data is less regular:
 
+``` Perl6
 my @a1 = ('I','L','O','V','E','Y','O','U');
 my @a2 = ('2','4','0','3','2','0','1','9');
 my @a3 = ('!','?','£','$','%','^','&','*');
@@ -204,6 +205,7 @@ my @a3 = ('!','?','£','$','%','^','&','*');
 loop ( my $i = 0; $i <= @a1.end; $i++ ) {
 	print "@a1[$i] @a2[$i] @a3[$i]\n";
 }
+```
 
 [Javier Luque](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-040/javier-luque/perl6/ch-1.p6)'s solution covers more complicated input data than just three arrays of equal size, but it doesn't cover the case where the array items are larger than a single character:
 
