@@ -440,7 +440,7 @@ sub MAIN( Int :$max = 50 ) {
 
 Another alternative might be to subclass the `Int` class (i.e. create a new class derived from `Int`) and add the `divisors` method to this new child class.
 
-[Ulrich Rielke](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-041/ulrich-rieke/perl6/ch-1.p6) wrote a `primeFactors` and a `isAttractive` subroutines to solve the problem. Note the use of the `repeat ... until` construct, which I know about but almost never use because I just don't think about it. 
+[Ulrich Rieke](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-041/ulrich-rieke/perl6/ch-1.p6) wrote a `primeFactors` and a `isAttractive` subroutines to solve the problem. Note the use of the `repeat ... until` construct, which I know about but almost never use because I just don't think about it. 
 
 ``` Perl6
 sub primeFactors( Int $n is copy ) {
