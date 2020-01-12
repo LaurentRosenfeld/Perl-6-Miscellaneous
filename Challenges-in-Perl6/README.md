@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Attractive Numbers](./Attractive-numbers.md) (PWC # 41);
 * [Sub-Lists Sorting](./Sublist-sorting.md) (PWC # 40);
 * [Multiple Array Contents](./Multiple-array-contents.md) (PWC # 40);
 * [Reverse Polish Notation](RPN-notation-calculation.md) (PWC # 39);
