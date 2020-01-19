@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Octal Numbers](./Octal-numbers.md) (PWC # 42);
 * [Leonardo Numbers](./Leonardo-numbers.md) (PWC # 41);
 * [Attractive Numbers](./Attractive-numbers.md) (PWC # 41);
 * [Sub-Lists Sorting](./Sublist-sorting.md) (PWC # 40);
