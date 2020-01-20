@@ -50,7 +50,7 @@ Many challengers used the same [base](https://docs.raku.org/routine/base) method
 say "Decimal $_ = Octal { $_.base(8) }" for ^51;
 ```
 
-[Daniel Muta]'https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-042/daniel-mita/raku/ch-1.sh) did it in the form of a one-liner:
+[Daniel Mita](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-042/daniel-mita/raku/ch-1.sh) did it in the form of a one-liner:
 
 ``` Perl6
 raku -e '.base(8).say for ^51'
@@ -111,9 +111,11 @@ sub to-octal(Int $i) {
 
 [Roger Bell West](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-042/roger-bell-west/raku/ch-1.p6) also used a format string:
 
+``` Perl6
 for (0..50) {
   printf('Decimal %d = Octal %o' ~ "\n",$_,$_);
 }
+```
 
 [Ryan Thompson](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-042/ryan-thompson/raku/ch-1.p6) also used a format string:
 
