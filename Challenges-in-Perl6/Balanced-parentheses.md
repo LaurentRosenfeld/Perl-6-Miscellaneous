@@ -112,9 +112,8 @@ sub check-parens (Str $expr) {
     }
     say "$expr: ", $count ?? "NOT OK" !! "OK";
 }
-
-The output is the same as before.
 ```
+The output is the same as before.
 
 ## Alternative Solutions
 
