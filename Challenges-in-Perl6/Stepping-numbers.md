@@ -1,6 +1,6 @@
 # Stepping Numbers
 
-> *Before going into the subject, I should apologize for having suspended my reviews of the Perl Weekly Challenge submissions for about two and a half months. I had warned Mohammad Anwar about that and told him the reasons, but Mohammad did not make these reasons public. The reason is that I did not have time during that period, because I had a lot of work running a local electoral campaign. I can now gradly and proudly announce that I was elected on March 15, 2020 in the city council of my home town, Conflans Sainte-Honorine (35,000 inhabitants), Paris area, France. I should hopefully have more time now to resume my reviews.*
+> *Before going into the subject, I should apologize for having suspended my reviews of the Perl Weekly Challenge submissions for about two and a half months. I had warned Mohammad Anwar about that and told him the reasons, but Mohammad did not make these reasons public. The reason is that I did not have time during that period, because I had a lot of work running a local electoral campaign. I can now gladly and proudly announce that I was elected on March 15, 2020 in the city council of my home town, Conflans Sainte-Honorine (35,000 inhabitants), Paris area, France. I should hopefully have more time now to resume my reviews.*
 
 This is derived in part from my [blog post](http://blogs.perl.org/users/laurent_r/2020/03/perl-weekly-challenge-stepping-numbers-and-lucky-winner.html) made in answer to the [Week 52 of the Perl Weekly Challenge](https://perlweeklychallenge.org/blog/perl-weekly-challenge-052/) organized by  <a href="http://blogs.perl.org/users/mohammad_s_anwar/">Mohammad S. Anwar</a> as well as answers made by others to the same challenge.
 
@@ -10,7 +10,7 @@ The challenge reads as follows:
 
 *A number is called a stepping number if the adjacent digits have a difference of 1. For example, 456 is a stepping number but 129 is not.*
 
-Just to make things slightly clearer, I would say that all adjacent digits should have an absolute difference of 1, so that 542, 454, or 654 are also stepping numbers.
+Just to make things slightly clearer, I would say that all adjacent digits should have an absolute difference of 1, so that 543, 454, or 654 are also stepping numbers.
 
 ## My Solutions
 
@@ -293,7 +293,7 @@ sub printIfSteppingNumber ( Int $number ) {
 ```
 Alicia's program is otherwise spending quite a bit of energy to validate the two input numbers. Most of this work could be done in an easier way within the `MAIN` subroutine signature. I guess the reason for that is that Alicia probably ported her Perl program to Raku. Anyway, this is the first time I see a Raku program written by Alicia (there might have been others before, but, in that case, I had not seen them, due to the fact that I did not follow PWC very closely in the last 10 weeks or so), welcome to the club, Alicia.
 
-[Colin Crain](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-052/colin-crain/raku/ch-1.p6) also used the brute force approach of testing each number within the input range. But Colin wrote not less than 4 subroutines to check is an input number is a stepping number. The first one is straight forward and works only with numbers that have three digits (as requested in the task specification):
+[Colin Crain](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-052/colin-crain/raku/ch-1.p6) also used the brute force approach of testing each number within the input range. But Colin wrote not less than 4 subroutines to check if an input number is a stepping number. The first one is straight forward and works only with numbers that have three digits (as requested in the task specification):
 
 ``` Perl6
 sub stepping1 ($num) {

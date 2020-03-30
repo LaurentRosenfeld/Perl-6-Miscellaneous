@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Stepping Numbers](./Stepping-numbers.md) (PWC # 052);
 * [Balanced Parentheses](./Balanced-parentheses.md) (PWC # 42);
 * [Octal Numbers](./Octal-numbers.md) (PWC # 42);
 * [Leonardo Numbers](./Leonardo-numbers.md) (PWC # 41);
@@ -74,6 +75,14 @@ At this point, the following posts are available:
 * [Anagrams-of-a-word.md](./Anagrams-of-a-word.md) (PWC # 5);
 * [Computing Pi Digits](./Pi-digits.md) (PWC # 4);
 * [Five-smooth or Hamming Numbers](./Five-smooth-numbers.md) (PWC # 3).
+
+
+Please note that I was unable to review Raku solutions for a period of about 10 weeks (from January to March 2020), for reasons explained in the introduction of [Stepping Numbers](./Stepping-numbers.md). Some of the challenge Raku solutions were reviewed during that time by Ryan Thompson:
+
+* Square Secret Code and Square Dumper: [Raku Review # 45](https://perlweeklychallenge.org/blog/p6-review-challenge-045);
+* Cryptic Message and Is the Room Open?: [Raku Review # 46](https://perlweeklychallenge.org/blog/p6-review-challenge-046);
+* Roman Calculator and Gapful Numbers: [Raku Review # 47](https://perlweeklychallenge.org/blog/p6-review-challenge-047);
+* Survivor and Palindrome Dates: [Raku Review # 48](https://perlweeklychallenge.org/blog/p6-review-challenge-048): ;
 
 I've been reviewing solutions for past challenges and will try to continue to do so, as time permits, but giving priority to those which are (IMHO) the most interesting ones.
 
