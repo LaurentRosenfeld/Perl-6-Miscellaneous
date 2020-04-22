@@ -23,7 +23,7 @@ The Collatz conjecture related to a sequence of numbers defined as follows: star
 
 ### The Basic Task
 
-For the purpose of the basic task, this is fairly straight forward. Here, we write a `collatz-seq` subroutine that, given an integer computes the next number in the Collatz sequence. And we call that subroutine in a loop until we reach 1:
+For the purpose of the basic task, this is fairly straight forward. Here, we write a `collatz-seq` subroutine that, given an integer computes the next term in the Collatz sequence. And we call that subroutine in a loop until we reach 1:
 
 ``` Perl6
 use v6;
@@ -861,7 +861,7 @@ sub count-terms( UInt:D $n --> UInt:D )
 
 In a comment to his program, Athanasius reports that his program takes 20 minutes to complete for the `1..1e6` range. That’s really too slow, there must be something wrong in the caching implementation.
 
-[Colin Crain](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-054/colin-crain/raku/ch-2.p6) used a `next-collatz` subroutine to compute the next number in a given sequence, and used this in the `make_collatz_sequence` subroutine to compute a full sequence:
+[Colin Crain](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-054/colin-crain/raku/ch-2.p6) used a `next-collatz` subroutine to compute the next term in a given sequence, and used this in the `make_collatz_sequence` subroutine to compute a full sequence:
 
 ``` Perl6
 sub make_collatz_sequence ( $start ) {
@@ -1033,7 +1033,7 @@ For the extra credit, Markus uses a `$cache`
 
 But if I understand correctly, I'm afraid his caching approach doesn't bring a really significant advantage, as the program does compute the full Collatz sequence for every number in the input range, and apparently only caches the length of the sequence. For the range ten times smaller (`1..1e5`) than the requirement, the program runs in 21 seconds on my computer. It appears that the caching approach is not very efficient.
 
-[Mohammad Anwar](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-054/mohammad-anwar/raku/ch-2.p6) cleverly used a multi subroutine to handle the two cases when computing the next number in the Collatz sequence:
+[Mohammad Anwar](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-054/mohammad-anwar/raku/ch-2.p6) cleverly used a multi subroutine to handle the two cases when computing the next term in the Collatz sequence:
 
 ``` Perl6
 sub MAIN(Int $n is copy where $n > 0) {
