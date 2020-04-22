@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Collatz Sequence](./Collatz-sequences.md) (PWC # 053);
 * [Stepping Numbers](./Stepping-numbers.md) (PWC # 052);
 * [Balanced Parentheses](./Balanced-parentheses.md) (PWC # 42);
 * [Octal Numbers](./Octal-numbers.md) (PWC # 42);
