@@ -43,7 +43,9 @@ The most obvious way might be a nested hash of hashes. Each node is represented 
         }
     }
 
-But that's quite verbose, I don’t like doing so much typing. A more concise way would to use a nested array of arrays. For each node, the first array item is the current value, the second item the left child and the third item the right child. The top of the tree shown above might look like this: `[5, [4, [11]], [8, [13], ]]`. Or, more graphically:
+But that's quite verbose, I don’t like doing so much typing. I'll present an example of that implementation in my [review of Raku solutions to PWC 57](https://github.com/LaurentRosenfeld/Perl-6-Miscellaneous/blob/master/Challenges-in-Perl6/Tree-inversion.md).
+
+A more concise way would to use a nested array of arrays. For each node, the first array item is the current value, the second item the left child and the third item the right child. The top of the tree shown above might look like this: `[5, [4, [11]], [8, [13], ]]`. Or, more graphically:
 
     [
         5, 
@@ -54,6 +56,8 @@ But that's quite verbose, I don’t like doing so much typing. A more concise wa
             8, [13] 
         ]
     ]
+
+We could also use an array of arrays by level (breadth-first), which will also be shown in my [review of Raku solutions to PWC 57](https://github.com/LaurentRosenfeld/Perl-6-Miscellaneous/blob/master/Challenges-in-Perl6/Tree-inversion.md).
 
 We could even use a simple flat array in a way similar to what is commonly done for *binary heaps* (i.e. a binary tree that keeps a partial order). Here we're not interested with partial order, but the idea is to use an array with an implicit data structure reflected in the following properties. The item with subscript 0 is the value of the root node. The index of an element is used to compute the index of its parent and the indices of its children. The basic idea is that, for any node, the index of its parent is about half the index of the current node, and, conversely, the indices of the children are about twice the index of the current node. More precisely, for a tree starting at index 0, the exact formulas for a node with index `$n` are commonly as follows:
 
@@ -586,7 +590,7 @@ say %(paths($tree).map: {.sum => $_}){22}
 
 The multi recursive `paths` subroutine returns a list of all the complete paths in the tree. The tree is implemented as a hash in which each parent is the key of a `Pair`, and its children are the value of that `Pair`. I don't have much more to say about it, except that you should really take the time to read very carefully and understand this nice and beautiful gem.
 
-[Colin Crain](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-056/colin-crain/raku/ch-2.p6)'s submission starts with a long comment explaining the various ways he considered for implementing the binary tree. Please follow the link, it is really an interesting reading. Anyway, Colin finally settled with an implementation of what I called "flat array" or binary-heap-like in my solutions.
+[Colin Crain](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-056/colin-crain/raku/ch-2.p6)'s submission starts (as quite commonly)  with a long comment explaining the various ways he considered for implementing the binary tree. Please follow the link, it is really an interesting reading. I think that Collin should really transform these detailed comments into blog posts, as they are really extremely interesting and informative (at least when the subject is so interesting). Anyway, back to the his comment, after a thorough discussion of various possibilities, Colin finally settled with an implementation of what I called "flat array" or binary-heap-like in my solutions.
 
 The main work is done in the recursive `sum_path` subroutine:
 
@@ -837,7 +841,7 @@ sub find-matched-paths(Hash[] $TREE, Int $SUM) {
 }
 ```
 
-The only problem with this iterative approach is that the `find-matched-paths` subroutine is implicitly hard-coded for a maximum tree depth of four levels. With a deeper tree, it would be necessary to add new nested loops. In that sense, I believe that a recursive approach is more adapted to a depth-first tree traversal (although computer science tells us that a recursive program can always be turned into an iterative program, for example by adding an explicit call stack).
+The only problem with this iterative approach is that the `find-matched-paths` subroutine is implicitly hard-coded for a maximum tree depth of four levels. With a deeper tree, it would be necessary to add new nested loops. In that sense, I believe that a recursive approach is more adapted to a depth-first tree traversal, although computer science tells us that a recursive program can always be turned into an iterative program, for example by adding an explicit call stack (see Ruben Westerberg's solution in my [review of Raku solutions to PWC 57](https://github.com/LaurentRosenfeld/Perl-6-Miscellaneous/blob/master/Challenges-in-Perl6/Tree-inversion.md) for an example of that).
 
 [Ryan Thompson](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-056/ryan-thompson/raku/ch-2.p6) used an array of arrays to store the binary tree and obtained a remarkably concise program:
 
