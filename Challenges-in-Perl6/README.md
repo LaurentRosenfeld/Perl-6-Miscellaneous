@@ -8,6 +8,7 @@ Note that many of these posts were written before Perl 6 was renamed into Raku (
 
 At this point, the following posts are available:
 
+* [Ordered Lineup](./ordered-lineup.md) (PWC # 058);
 * [Tree Inversion](./Tree-inversion.md) (PWC # 057);
 * [Tree Path Sums](./Path-sums-in-binary-trees.md) (PWC # 056);
 * [Collatz Sequence](./Collatz-sequences.md) (PWC # 053);
