@@ -15,11 +15,11 @@ The challenge reads as follows:
 
 *Here is a diagram of the input arrays @H and @T:*
 
-[](.\Figures\ordered_line_1.svg)
+![](./Figures/ordered_line_1.svg)
 
 *Finally, here is one possible solution that satisfies @H and @T:*
 
-[](.\Figures\ordered_line_2.svg)
+![](./Figures/ordered_line_2.svg)
 
 *As per the last diagram, your script would then output the ordering (5, 1, 2, 6, 3, 4) in this case. (The leftmost element is the “front” of the array.)*
 
